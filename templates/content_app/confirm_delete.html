@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete announcement" %}{% endblock %}
+{% block header %}{% trans "Delete announcement" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    {% if user.is_superuser or user.id == 1 %}
+        <h2>{% trans "Delete announcement?" %}</h2>
+        <p class="muted">{% blocktrans with title=object.title %}This will remove {{ title }}.{% endblocktrans %}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">{% trans "Yes, delete" %}</button>
+            <a class="btn ghost" href="{% url 'content:announcements' %}">{% trans "Cancel" %}</a>
+        </form>
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to delete announcements." %}</p>
+    {% endif %}
+</section>
+{% endblock %}

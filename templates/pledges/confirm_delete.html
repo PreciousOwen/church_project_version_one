@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete pledge" %}{% endblock %}
+{% block header %}{% trans "Delete pledge" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    {% if user.is_superuser or user.id == 1 %}
+        <h2>{% trans "Delete pledge?" %}</h2>
+        <p class="muted">{% blocktrans with name=object.member.full_name %}This will remove the pledge for {{ name }}.{% endblocktrans %}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">{% trans "Yes, delete" %}</button>
+            <a class="btn ghost" href="{% url 'pledges:list' %}">{% trans "Cancel" %}</a>
+        </form>
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to delete pledges." %}</p>
+    {% endif %}
+</section>
+{% endblock %}

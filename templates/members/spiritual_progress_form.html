@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Spiritual progress" %}{% endblock %}
+{% block header %}{% trans "Spiritual progress" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>{{ member.full_name }}</h2>
+    {% if user.is_superuser or user.id == 1 %}
+        <form method="post" class="form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-grid">
+                {% for field in form %}
+                    <label>
+                        <span>{{ field.label }}</span>
+                        {{ field }}
+                        {% if field.errors %}
+                            <small class="muted">{{ field.errors|striptags }}</small>
+                        {% endif %}
+                    </label>
+                {% endfor %}
+            </div>
+            <button class="btn" type="submit">{% trans "Save progress" %}</button>
+        </form>
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to edit spiritual progress." %}</p>
+    {% endif %}
+</section>
+{% endblock %}

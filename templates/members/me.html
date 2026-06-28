@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "My profile" %}{% endblock %}
+{% block header %}{% trans "My profile" %}{% endblock %}
+
+{% block content %}
+{% if profile_state == "approved" and member %}
+<section class="card">
+    <div class="card-head">
+        <h2>{{ member.full_name }}</h2>
+        <span class="badge">{% trans "Approved member" %}</span>
+    </div>
+    <div class="grid cards">
+        <div class="card">
+            <h3>{% trans "Personal information" %}</h3>
+            <p class="muted">{% trans "Membership No:" %} {{ member.membership_no }}</p>
+            <p class="muted">{% trans "Gender:" %} {{ member.gender }}</p>
+            <p class="muted">{% trans "Date of birth:" %} {{ member.dob }}</p>
+            <p class="muted">{% trans "Marital status:" %} {{ member.marital_status }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Contacts" %}</h3>
+            <p class="muted">{% trans "Phone:" %} {{ member.primary_phone }}</p>
+            <p class="muted">{% trans "Email:" %} {{ member.email|default:"-" }}</p>
+            <p class="muted">{% trans "Residence name:" %} {{ member.residence_name|default:"-" }}</p>
+            <p class="muted">{% trans "Fellowship:" %} {{ member.fellowship_name|default:"-" }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Spiritual services" %}</h3>
+            <p class="muted">{% trans "Baptized:" %} {{ member.is_baptized|yesno:_("Yes,No") }}</p>
+            <p class="muted">{% trans "Confirmed:" %} {{ member.is_confirmed|yesno:_("Yes,No") }}</p>
+            <p class="muted">{% trans "Participates in sacraments:" %} {{ member.participates_in_sacraments|yesno:_("Yes,No") }}</p>
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Membership status" %}</h2>
+        {% if application %}
+            <span class="badge">{{ application.get_status_display }}</span>
+        {% else %}
+            <span class="badge">{% trans "Not submitted" %}</span>
+        {% endif %}
+    </div>
+
+    {% if application %}
+    <div class="grid cards">
+        <div class="card">
+            <h3>{% trans "Application details" %}</h3>
+            <p class="muted">{% trans "Full name:" %} {{ application.full_name }}</p>
+            <p class="muted">{% trans "Phone:" %} {{ application.primary_phone }}</p>
+            <p class="muted">{% trans "Email:" %} {{ application.email|default:"-" }}</p>
+            <p class="muted">{% trans "Submitted at:" %} {{ application.created_at }}</p>
+            {% if application.reviewed_at %}
+                <p class="muted">{% trans "Reviewed at:" %} {{ application.reviewed_at }}</p>
+            {% endif %}
+            {% if application.assigned_membership_no %}
+                <p class="muted">{% trans "Assigned membership number:" %} {{ application.assigned_membership_no }}</p>
+            {% endif %}
+        </div>
+        <div class="card">
+            {% if application.status == "pending" %}
+                <h3>{% trans "Pending approval" %}</h3>
+                <p class="muted">{% trans "Your application is under review. You will see your full member profile here once approved." %}</p>
+            {% elif application.status == "rejected" %}
+                <h3>{% trans "Application needs update" %}</h3>
+                <p class="muted">{% trans "Your application was not approved. Please submit your application again." %}</p>
+                <a class="btn" href="{% url 'members:apply' %}">{% trans "Submit again" %}</a>
+            {% else %}
+                <h3>{% trans "Application submitted" %}</h3>
+                <p class="muted">{% trans "Your profile will appear here after final approval." %}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+        <p class="muted">{% trans "You have not submitted a membership application yet." %}</p>
+        <a class="btn" href="{% url 'members:apply' %}">{% trans "Start application" %}</a>
+    {% endif %}
+</section>
+{% endif %}
+{% endblock %}

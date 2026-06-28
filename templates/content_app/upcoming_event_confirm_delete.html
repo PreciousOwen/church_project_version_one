@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete upcoming event" %}{% endblock %}
+{% block header %}{% trans "Delete upcoming event" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    {% if user.is_superuser or user.id == 1 %}
+        <h2>{% trans "Delete upcoming event?" %}</h2>
+        <p class="muted">{% trans "This will remove it from the landing page." %}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">{% trans "Delete" %}</button>
+            <a class="btn ghost" href="{% url 'content:upcoming-events' %}">{% trans "Cancel" %}</a>
+        </form>
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to delete upcoming events." %}</p>
+    {% endif %}
+</section>
+{% endblock %}

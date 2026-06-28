@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Create Tenant" %}{% endblock %}
+{% block header %}{% trans "Create Tenant" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-grid">
+            {% for field in form %}
+                <label>
+                    <span>{{ field.label }}</span>
+                    {{ field }}
+                    {% if field.errors %}
+                        <small class="muted">{{ field.errors|striptags }}</small>
+                    {% endif %}
+                </label>
+            {% endfor %}
+        </div>
+        <button class="btn" type="submit">{% trans "Create tenant" %}</button>
+    </form>
+</section>
+{% endblock %}

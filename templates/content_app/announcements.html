@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Announcements" %}{% endblock %}
+{% block header %}{% trans "Announcements" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Parish announcements" %}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <a class="btn" href="{% url 'content:announcement-add' %}">{% trans "New announcement" %}</a>
+        {% endif %}
+    </div>
+    <form method="get" class="form">
+        <div class="form-grid">
+            <label>
+                <span>{% trans "Category" %}</span>
+                <select name="category">
+                    <option value="">{% trans "All" %}</option>
+                    {% for value, label in categories %}
+                        <option value="{{ value }}" {% if value == selected_category %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <div>
+                <span>&nbsp;</span>
+                <button class="btn" type="submit">{% trans "Filter" %}</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="card">
+    <div class="list">
+        {% for announcement in announcements %}
+            <div class="list-item">
+                <div>
+                    <div class="list-title">{{ announcement.title }}</div>
+                    <div class="muted">{{ announcement.published_at|date:'M d, Y' }} • {{ announcement.get_category_display }}</div>
+                </div>
+                <div>
+                    {% if user.is_superuser or user.id == 1 %}
+                        <a class="btn ghost" href="{% url 'content:announcement-update' announcement.pk %}">{% trans "Edit" %}</a>
+                        <a class="btn ghost" href="{% url 'content:announcement-delete' announcement.pk %}">{% trans "Delete" %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p class="muted">{% trans "No announcements published." %}</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

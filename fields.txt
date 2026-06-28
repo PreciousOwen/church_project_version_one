@@ -1,0 +1,63 @@
+the member model should have the following fields in the database where they will be added in the cards with category and data as follows
+CATEGORY ONE (CARD ONE): fields
+1. name (first, middle, and last) it is done ready --done
+2. gender(male or female) it is done ready --done
+3. date of birth (dob) done ready --done
+4. place of birth -- not done
+5. marital status -- done
+6. mariage type --done
+7. spouse name if married -- not done
+8. place of marriage if married -- not done 
+9. name of a spouse you live with if not married with in church marriage type --not done
+10. children or other church members that depend on you there should be a subfield where by the person can enter the full name, date of birth of the dependent person and relationship with the dependent person these three fields should be saved in json format in the database and the can also be queried later and also make it adaptible in the form to be capable of getting extended if there are many depending people to the member --not done
+11. membership number as username --done
+
+
+CATEGORY TWO(CARD TWO): fields
+It consists of the following fields 
+1. phone number -- present in db 
+2. spouse phone number --not present
+3. P.O.Box or email --present but add for P.O.Box
+4. House Number --not present 
+5. Residence Name -- not present
+6. block number --not present
+7. former parish --not present 
+8. your fellowship --not present 
+9. name of neighbouring member --not present 
+10. neighbouring member phone number --not present
+11. name of church elder in your residence --not present
+12. phone number of the church elder --not present 
+
+
+CATEGORY THREE(CARD THREE): fields
+1. Occupacion --not present 
+2. Work place name  --not present 
+3. Education --not present 
+4 Proffesion --not present 
+5. can you dedicate and contribute your time based on your occupation and proffesional information as stated above? (fields yes or no) --not present 
+
+
+
+
+add the following in the member database fields 
+CATEGORY FOUR(CARD FOUR): fields
+1. are you baptized? (yes/no)
+if yes put the date for being baptized 
+2. have you got the confirmation? if yes put the date for confirmation
+3. do you participate in sacraments(fields yes or no)
+
+
+CATEGORY FIVE(CARD FIVE): fields
+1. do you participate in fellowships? (yes/no)
+2. "if yes for the field 1 "then, name of fellowhip house?
+3.  "if no for  the field 1 "then why don't you participate in fellowship?
+4. name of chairperson managing fellowship houses 
+5. signature of the chairperson for the fellowship houses
+
+CATEGORY SIX(CARD SIX): fields
+1. fellowship
+2. sunday school
+3. visiting the sick
+4. bible study
+5. choir either evangelist, trumpets, women or youth
+6. union either women or youth

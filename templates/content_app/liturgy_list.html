@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Daily liturgy" %}{% endblock %}
+{% block header %}{% trans "Daily liturgy" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Daily liturgy" %}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <a class="btn" href="{% url 'content:liturgy-add' %}">{% trans "Add liturgy" %}</a>
+        {% endif %}
+    </div>
+</section>
+
+<section class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Verse of the day" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for liturgy in liturgies %}
+                <tr>
+                    <td>{{ liturgy.date }}</td>
+                    <td>{{ liturgy.verse_of_the_day }}</td>
+                    <td>
+                        {% if user.is_superuser or user.id == 1 %}
+                            <a class="btn ghost" href="{% url 'content:liturgy-update' liturgy.pk %}">{% trans "Edit" %}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3" class="muted">{% trans "No liturgy entries yet." %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

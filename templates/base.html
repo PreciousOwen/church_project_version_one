@@ -1,0 +1,125 @@
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}KKKT Salasala DMP{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <style>
+        .lang-sw { display:flex; gap:4px; }
+        .lang-btn {
+            background:transparent; border:1px solid rgba(255,255,255,.3);
+            color:rgba(255,255,255,.7); border-radius:6px; padding:4px 8px;
+            font-size:.72rem; font-weight:600; cursor:pointer; transition:all .2s;
+        }
+        .lang-btn:hover, .lang-btn.active { background:rgba(255,255,255,.2); color:#fff; border-color:rgba(255,255,255,.6); }
+
+        /* Topbar variant (used on apply flow where sidebar is hidden) */
+        .lang-sw.top .lang-btn {
+            border-color: rgba(30, 37, 38, 0.25);
+            color: rgba(30, 37, 38, 0.75);
+        }
+        .lang-sw.top .lang-btn:hover,
+        .lang-sw.top .lang-btn.active {
+            background: rgba(199, 163, 91, 0.18);
+            color: #1e2526;
+            border-color: rgba(30, 37, 38, 0.35);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <span class="loader"></span>
+    </div>
+    <div class="page">
+        {% if not hide_sidebar %}
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-mark">
+                    <img src="/media/logo/kkkt-logo.jpg" alt="KKKT Salasala DMP logo" />
+                </div>
+                <div>
+                    <div class="brand-title">KKKT Salasala DMP</div>
+                    {% if request.tenant %}
+                        <div class="brand-sub">{{ request.tenant.name }}</div>
+                    {% endif %}
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="{% trans "Close menu" %}">✕</button>
+            </div>
+            <nav class="nav">
+                {% if user.is_authenticated and user.is_superuser or user.is_authenticated and user.id == 1 %}
+                    <a href="{% url 'home' %}">{% trans "Dashboard" %}</a>
+                    <a href="{% url 'members:list' %}">{% trans "Members" %}</a>
+                    <a href="{% url 'members:applications' %}">
+                        {% trans "Member queries" %}
+                        {% if pending_applications_count %}
+                            <span class="badge">{{ pending_applications_count }}</span>
+                        {% endif %}
+                    </a>
+                    <a href="{% url 'fellowships:list' %}">{% trans "Fellowships" %}</a>
+                    <a href="{% url 'pledges:list' %}">{% trans "Pledges" %}</a>
+                    <a href="{% url 'content:announcements' %}">{% trans "Announcements" %}</a>
+                    <a href="{% url 'content:upcoming-events' %}">{% trans "Upcoming events" %}</a>
+                    <a href="{% url 'content:liturgy' %}">{% trans "Daily Liturgy" %}</a>
+                {% else %}
+                    <a href="{% url 'members:me' %}">{% trans "My profile" %}</a>
+                    <a href="{% url 'members:apply' %}">{% trans "Membership application" %}</a>
+                    <a href="{% url 'fellowships:list' %}">{% trans "My fellowship" %}</a>
+                    <a href="{% url 'pledges:list' %}">{% trans "My pledges" %}</a>
+                    <a href="{% url 'content:announcements' %}">{% trans "Announcements" %}</a>
+                    <a href="{% url 'content:upcoming-events' %}">{% trans "Upcoming events" %}</a>
+                    <a href="{% url 'content:liturgy' %}">{% trans "Daily Liturgy" %}</a>
+                {% endif %}
+            </nav>
+            <div class="sidebar-footer">
+                <form action="{% url 'set_language' %}" method="post" class="lang-sw">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ request.path }}">
+                    <button name="language" value="en" type="submit" class="lang-btn{% if LANGUAGE_CODE == 'en' %} active{% endif %}">EN</button>
+                    <button name="language" value="sw" type="submit" class="lang-btn{% if LANGUAGE_CODE == 'sw' %} active{% endif %}">SW</button>
+                </form>
+                {% if user.is_authenticated %}
+                    <div class="user-pill">{{ user.username }}</div>
+                    <a class="btn ghost" href="{% url 'logout' %}">{% trans "Sign out" %}</a>
+                {% else %}
+                    <a class="btn" href="{% url 'login' %}">{% trans "Sign in" %}</a>
+                {% endif %}
+            </div>
+        </aside>
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        {% endif %}
+        <div class="content">
+            <header class="topbar">
+                {% if not hide_sidebar %}
+                    <button class="icon-btn" id="menuToggle" aria-label="{% trans "Toggle menu" %}">☰</button>
+                {% endif %}
+                <div class="topbar-title">{% block header %}{% trans "Welcome" %}{% endblock %}</div>
+                <div class="topbar-actions">
+                    {% if show_lang_switcher_top %}
+                        <form action="{% url 'set_language' %}" method="post" class="lang-sw top" aria-label="{% trans 'Change language' %}">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ request.path }}">
+                            <button name="language" value="en" type="submit" class="lang-btn{% if LANGUAGE_CODE == 'en' %} active{% endif %}">EN</button>
+                            <button name="language" value="sw" type="submit" class="lang-btn{% if LANGUAGE_CODE == 'sw' %} active{% endif %}">SW</button>
+                        </form>
+                    {% endif %}
+                    {% if request.tenant %}
+                        <span class="badge">{% trans "Tenant" %}: {{ request.tenant.slug }}</span>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <a class="btn ghost" href="{% url 'logout' %}">{% trans "Sign out" %}</a>
+                    {% endif %}
+                </div>
+            </header>
+            <main class="main">
+                {% include 'includes/flash.html' %}
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

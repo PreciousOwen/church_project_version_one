@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete fellowship" %}{% endblock %}
+{% block header %}{% trans "Delete fellowship" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    {% if user.is_superuser or user.id == 1 %}
+        <h2>{% blocktrans with name=object.name %}Delete {{ name }}?{% endblocktrans %}</h2>
+        <p class="muted">{% trans "This will remove the fellowship group and its memberships." %}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">{% trans "Yes, delete" %}</button>
+            <a class="btn ghost" href="{% url 'fellowships:detail' object.pk %}">{% trans "Cancel" %}</a>
+        </form>
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to delete fellowship groups." %}</p>
+    {% endif %}
+</section>
+{% endblock %}

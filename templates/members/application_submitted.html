@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Application submitted" %}{% endblock %}
+{% block header %}{% trans "Application submitted" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>{% trans "Thank you for your submission" %}</h2>
+    <p class="muted">{% trans "Your membership application has been sent to the admin for approval." %}</p>
+    <!-- <a class="btn" href="{% url 'home' %}">{% trans "Back to dashboard" %}</a> -->
+</section>
+<section class="card">
+    <h3>{% trans "Pending approval" %}</h3>
+    <p class="muted">{% trans "We will notify you once your membership number has been assigned." %}</p>
+</section>
+{% endblock %}

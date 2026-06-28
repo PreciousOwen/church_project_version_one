@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% blocktrans with name=member.full_name %}{{ name }} - Member{% endblocktrans %}{% endblock %}
+{% block header %}{% if user.is_superuser or user.id == 1 %}{% trans "Member profile" %}{% else %}{% trans "My profile" %}{% endif %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{{ member.full_name }}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <div>
+                <a class="btn ghost" href="{% url 'members:update' member.pk %}">{% trans "Edit" %}</a>
+                <a class="btn" href="{% url 'members:spiritual-progress' member.pk %}">{% trans "Spiritual progress" %}</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="grid cards">
+        <div class="card">
+            <h3>{% trans "Personal information" %}</h3>
+            <p class="muted">{% trans "Membership No:" %} {{ member.membership_no }}</p>
+            <p class="muted">{% trans "Gender:" %} {{ member.gender }}</p>
+            <p class="muted">{% trans "Date of birth:" %} {{ member.dob }}</p>
+            <p class="muted">{% trans "Place of birth:" %} {{ member.place_of_birth|default:'-' }}</p>
+            <p class="muted">{% trans "Marital status:" %} {{ member.marital_status }}</p>
+            <p class="muted">{% trans "Marriage type:" %} {{ member.marriage_type|default:'-' }}</p>
+            <p class="muted">{% trans "Spouse name:" %} {{ member.spouse_name|default:'-' }}</p>
+            <p class="muted">{% trans "Place of marriage:" %} {{ member.marriage_place|default:'-' }}</p>
+            <p class="muted">{% trans "Living with spouse:" %} {{ member.living_with_spouse_name|default:'-' }}</p>
+            {% if member.dependents %}
+                <p class="muted">{% trans "Dependents:" %}</p>
+                <ul class="muted">
+                    {% for dependent in member.dependents %}
+                        <li>{{ dependent.full_name|default:'-' }} • {{ dependent.dob|default:'-' }} • {{ dependent.relationship|default:'-' }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="muted">{% trans "Dependents:" %} -</p>
+            {% endif %}
+        </div>
+        <div class="card">
+            <h3>{% trans "Contacts and residence" %}</h3>
+            <p class="muted">{% trans "Phone:" %} {{ member.primary_phone }}</p>
+            <p class="muted">{% trans "Spouse phone:" %} {{ member.spouse_phone|default:'-' }}</p>
+            <p class="muted">{% trans "Email:" %} {{ member.email|default:'-' }}</p>
+            <p class="muted">{% trans "P.O. Box:" %} {{ member.po_box|default:'-' }}</p>
+            <p class="muted">{% trans "House number:" %} {{ member.house_number|default:'-' }}</p>
+            <p class="muted">{% trans "Residence name:" %} {{ member.residence_name|default:'-' }}</p>
+            <p class="muted">{% trans "Block number:" %} {{ member.block_number|default:'-' }}</p>
+            <p class="muted">{% trans "Former parish:" %} {{ member.previous_parish|default:'-' }}</p>
+            <p class="muted">{% trans "Fellowship:" %} {{ member.fellowship_name|default:'-' }}</p>
+            <p class="muted">{% trans "Neighbor:" %} {{ member.neighbor_name|default:'-' }}</p>
+            <p class="muted">{% trans "Neighbor phone:" %} {{ member.neighbor_phone|default:'-' }}</p>
+            <p class="muted">{% trans "Elder:" %} {{ member.elder_name|default:'-' }}</p>
+            <p class="muted">{% trans "Elder phone:" %} {{ member.elder_phone|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Education, profession, and occupation" %}</h3>
+            <p class="muted">{% trans "Occupation:" %} {{ member.occupation|default:'-' }}</p>
+            <p class="muted">{% trans "Work place:" %} {{ member.work_place|default:'-' }}</p>
+            <p class="muted">{% trans "Education:" %} {{ member.education_level|default:'-' }}</p>
+            <p class="muted">{% trans "Profession:" %} {{ member.profession|default:'-' }}</p>
+            <p class="muted">{% trans "Volunteer:" %} {{ member.volunteer_status|yesno:_('Yes,No') }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Spiritual & professional progress" %}</h2>
+    </div>
+    {% if spiritual_progress %}
+        <div class="grid cards">
+            <div class="card">
+                <h3>{% trans "Faith milestones" %}</h3>
+                <p class="muted">{% trans "Baptized:" %} {{ spiritual_progress.is_baptized|yesno:_('Yes,No') }}</p>
+                <p class="muted">{% trans "Confirmed:" %} {{ spiritual_progress.is_confirmed|yesno:_('Yes,No') }}</p>
+                <p class="muted">{% trans "Communion:" %} {{ spiritual_progress.takes_communion|yesno:_('Yes,No') }}</p>
+            </div>
+            <div class="card">
+                <h3>{% trans "Skills" %}</h3>
+                <p class="muted">{% trans "Profession:" %} {{ spiritual_progress.profession|default:'-' }}</p>
+                <p class="muted">{% trans "Occupation:" %} {{ spiritual_progress.occupation|default:'-' }}</p>
+                <p class="muted">{% trans "Work place:" %} {{ spiritual_progress.work_place|default:'-' }}</p>
+            </div>
+        </div>
+    {% else %}
+        <div class="grid cards">
+            <div class="card">
+                <h3>{% trans "Faith milestones" %}</h3>
+                <p class="muted">{% trans "Baptized:" %} {{ member.is_baptized|yesno:_('Yes,No') }}</p>
+                <p class="muted">{% trans "Confirmed:" %} {{ member.is_confirmed|yesno:_('Yes,No') }}</p>
+                <p class="muted">{% trans "Communion:" %} {{ member.participates_in_sacraments|yesno:_('Yes,No') }}</p>
+            </div>
+            <div class="card">
+                <h3>{% trans "Skills" %}</h3>
+                <p class="muted">{% trans "Profession:" %} {{ member.profession|default:'-' }}</p>
+                <p class="muted">{% trans "Occupation:" %} {{ member.occupation|default:'-' }}</p>
+                <p class="muted">{% trans "Work place:" %} {{ member.work_place|default:'-' }}</p>
+            </div>
+        </div>
+    {% endif %}
+</section>
+
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Spiritual services" %}</h2>
+    </div>
+    <div class="grid cards">
+        <div class="card">
+            <p class="muted">{% trans "Baptized:" %} {{ member.is_baptized|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Baptism date:" %} {{ member.baptism_date|default:'-' }}</p>
+            <p class="muted">{% trans "Confirmed:" %} {{ member.is_confirmed|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Confirmation date:" %} {{ member.confirmation_date|default:'-' }}</p>
+            <p class="muted">{% trans "Participates in sacraments:" %} {{ member.participates_in_sacraments|yesno:_('Yes,No') }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Participation in congregation services" %}</h2>
+    </div>
+    <div class="grid cards">
+        <div class="card">
+            <p class="muted">{% trans "Participates in fellowship:" %} {{ member.participates_in_fellowship|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Fellowship house:" %} {{ member.fellowship_house_name|default:'-' }}</p>
+            <p class="muted">{% trans "If not participating:" %} {{ member.fellowship_non_participation_reason|default:'-' }}</p>
+            <p class="muted">{% trans "Chairperson:" %} {{ member.fellowship_chairperson_name|default:'-' }}</p>
+            <p class="muted">{% trans "Chairperson signature:" %} {{ member.fellowship_chairperson_signature|default:'-' }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Fellowship and service interest" %}</h2>
+    </div>
+    <div class="grid cards">
+        <div class="card">
+            <p class="muted">{% trans "Fellowship:" %} {{ member.join_fellowship|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Sunday school:" %} {{ member.join_sunday_school|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Visiting the sick:" %} {{ member.join_visiting_sick|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Bible study:" %} {{ member.join_bible_study|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Choir:" %} {{ member.join_choir|yesno:_('Yes,No') }}</p>
+            <p class="muted">{% trans "Union:" %} {{ member.join_union|yesno:_('Yes,No') }}</p>
+        </div>
+    </div>
+</section>
+
+{% if user.is_superuser or user.id == 1 %}
+    <section class="card">
+        <a class="btn ghost" href="{% url 'members:delete' member.pk %}">{% trans "Delete member" %}</a>
+    </section>
+{% endif %}
+{% endblock %}

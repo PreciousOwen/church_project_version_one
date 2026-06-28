@@ -1,0 +1,263 @@
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% trans "KKKT Salasala DMP | Parish Platform" %}</title>
+  <meta name="description" content="{% trans "Join us for worship and community. Everyone is welcome." %}">
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="loader"></span>
+  </div>
+  <div class="bg-primary py-2">
+    <div class="container d-flex justify-content-end align-items-center">
+      <i class="fas fa-globe text-white mr-2" aria-hidden="true"></i>
+      <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center mb-0">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}">
+        <button name="language" value="en" type="submit" class="btn btn-link text-white small font-weight-bold p-0 mr-3">EN</button>
+        <button name="language" value="sw" type="submit" class="btn btn-link text-white small font-weight-bold p-0">SW</button>
+      </form>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'landing' %}">
+        <img src="/media/logo/kkkt-logo.jpg" alt="KKKT Salasala DMP logo" class="landing-logo" />
+        <span>KKKT Salasala DMP</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="{% trans "Toggle navigation" %}">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <button class="navbar-close" type="button" aria-label="{% trans "Close menu" %}">&times;</button>
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item active"><a class="nav-link" href="{% url 'landing' %}">{% trans "Home" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">{% trans "About" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'events' %}">{% trans "Events" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ministries' %}">{% trans "Ministries" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-outline-light btn-sm" href="{% url 'login' %}">{% trans "Sign in" %}</a>
+          </li>
+          <li class="nav-item ml-lg-2 mt-2 mt-lg-0">
+            {% if user.is_authenticated %}
+              <a class="btn btn-light btn-sm" href="{% url 'home' %}">{% trans "Go to dashboard" %}</a>
+            {% else %}
+              <a class="btn btn-light btn-sm" href="{% url 'signup' %}">{% trans "Sign up" %}</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar-backdrop" data-navbar-backdrop></div>
+
+  <header class="header-westport overlay-dark landing-hero-bg">
+    <div class="container overlay-content text-white pb-5">
+      <h1 class="header-heading">{% trans "Welcome" %}</h1>
+      <p class="header-subheading">{% trans "Come worship with us!" %}</p>
+      <div class="mt-3">
+        <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg">{% trans "Sign in" %}</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'home' %}" class="btn btn-light btn-lg ml-2">{% trans "Go to dashboard" %}</a>
+        {% else %}
+          <a href="{% url 'signup' %}" class="btn btn-light btn-lg ml-2">{% trans "Sign up" %}</a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <section class="block-wrapper bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <h2 class="mb-4">{% trans "Welcome to KKKT Salasala DMP!" %}</h2>
+          <h5 class="text-default weight-light">{% trans "We are a community of Christ followers who:" %}</h5>
+          <div class="my-5">
+            <h4 class="font-weight-bold">{% trans "Gather together to celebrate the glory of God;" %}</h4>
+            <h4 class="font-weight-bold">{% trans "Grow together to cultivate the Fruits of the Spirit;" %}</h4>
+            <h4 class="font-weight-bold">{% trans "Go together to communicate the Hope of Jesus." %}</h4>
+          </div>
+          <a href="#" class="btn btn-outline-accent btn-lg">{% trans "Learn More" %}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block-wrapper bg-dark text-white landing-participate-bg">
+    <div class="overlay-dark overlay-strong">
+      <div class="container py-5 overlay-content">
+        <div class="text-center mb-5">
+          <h2 class="text-white">{% trans "Two ways to participate" %}</h2>
+          <h5 class="text-white-50">{% trans "Sunday Worship Gathering 10:50 AM" %}</h5>
+        </div>
+        <div class="row">
+          <div class="col-md-6 text-center mb-4">
+            <i class="fas fa-map-marker-alt block-icon-md text-white"></i>
+            <h4 class="mt-3">{% trans "Join us in person" %}</h4>
+            <p class="px-4">{% trans "We gather every Sunday at 10:50 am for worship. All ages are welcome." %}</p>
+          </div>
+          <div class="col-md-6 text-center mb-4">
+            <i class="fas fa-laptop block-icon-md text-white"></i>
+            <h4 class="mt-3">{% trans "Participate online" %}</h4>
+            <p class="px-4">{% trans "Can't make it? Join us live on YouTube or Facebook." %}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block-wrapper bg-primary text-white events-upcoming-bg">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>{% trans "Upcoming Events" %}</h2>
+        <p class="h5 text-white-50">{% trans "Mark your calendars for these great events" %}</p>
+      </div>
+      <div class="row upcoming-events-grid">
+        {% for event in upcoming_events %}
+          <div class="col-md-4 mb-4 upcoming-event-card">
+            <div class="card bg-dark text-white border-0">
+              <div class="position-relative">
+                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}" loading="lazy">
+                {% if event.event_date %}
+                  <div class="event-list-date">
+                    {{ event.event_date|date:"M" }} <span class="event-list-date-day">{{ event.event_date|date:"d" }}</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="card-body landing-event-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <p class="card-text text-white-50">{{ event.description }}</p>
+              </div>
+            </div>
+          </div>
+        {% empty %}
+          <div class="col-12">
+            <p class="text-white-50 text-center mb-0">{% trans "No upcoming events yet." %}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="block-wrapper bg-secondary p-0">
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <img src="/media/upcoming_events/worship_event.jpg" alt="{% trans "Field" %}" class="landing-news-image">
+      </div>
+      <div class="col-md-6 d-flex align-items-center p-5">
+        <div>
+          <h2>{% trans "Latest News" %}</h2>
+          <p class="text-default mb-4">{% trans "Recent updates to keep you in the loop." %}</p>
+          <div>
+            <a href="#" class="d-block mb-3 text-dark">
+              <h5>{% trans "Easter Week Services" %}</h5>
+              <p class="text-default">{% trans "Mar 11, 2026" %}</p>
+            </a>
+            <a href="#" class="d-block mb-3 text-dark">
+              <h5>{% trans "Volunteer Opportunity" %}</h5>
+              <p class="text-default">{% trans "Sunday Morning Sound Team — Mar 10, 2026" %}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-tone py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="mb-2">{% trans "Sign up for our Newsletter" %}</h2>
+          <p>{% trans "Subscribe to receive email updates with the latest news." %}</p>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <form>
+            <div class="form-group mb-0">
+              <label class="font-weight-normal" for="email">{% trans "Enter Your Email" %}</label>
+              <div class="form-inline">
+                <input type="email" class="form-control mr-2 flex-grow-1" id="email" placeholder="{% trans "Your email" %}">
+                <button class="btn btn-primary btn-lg">{% trans "Subscribe" %}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 text-center text-md-left mb-4">
+          <div class="h4 text-white">{% trans "KKKT Salasala DMP" %}</div>
+        </div>
+        <div class="col-md-9">
+          <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start mb-4">
+            <li class="mr-4"><a href="{% url 'landing' %}" class="text-white-50">{% trans "Home" %}</a></li>
+            <li class="mr-4"><a href="{% url 'about' %}" class="text-white-50">{% trans "About" %}</a></li>
+            <li class="mr-4"><a href="{% url 'events' %}" class="text-white-50">{% trans "Events" %}</a></li>
+            <li class="mr-4"><a href="{% url 'ministries' %}" class="text-white-50">{% trans "Ministries" %}</a></li>
+            <li class="mr-4"><a href="#" class="text-white-50">{% trans "News" %}</a></li>
+            <li class="mr-4"><a href="#" class="text-white-50">{% trans "Media" %}</a></li>
+            <li class="mr-4"><a href="#" class="text-white-50">{% trans "Give" %}</a></li>
+            <li class="mr-4"><a href="{% url 'contact' %}" class="text-white-50">{% trans "Contact" %}</a></li>
+          </ul>
+          <hr class="bg-secondary">
+          <div class="row">
+            <div class="col-sm-4 mb-3">
+              <h5 class="footer-heading">{% trans "About" %}</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white-50">{% trans "Who We Are" %}</a></li>
+                <li><a href="#" class="text-white-50">{% trans "Our Staff" %}</a></li>
+                <li><a href="#" class="text-white-50">{% trans "I'm New" %}</a></li>
+                <li><a href="#" class="text-white-50">{% trans "Our Beliefs" %}</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <h5 class="footer-heading">{% trans "KKKT Salasala DMP" %}</h5>
+              <address class="text-white-50">
+                {% trans "KKKT East & Coastal Diocese" %}<br>
+                {% trans "Dar es Salaam, Tanzania" %}<br>
+                <a href="#" class="text-white-50">{% trans "View Map" %}</a>
+              </address>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <h5 class="footer-heading">{% trans "Contact" %}</h5>
+              <ul class="list-unstyled">
+                <li>{% trans "Phone:" %} <a href="tel:+255700000000" class="text-white-50">+255 700 000 000</a></li>
+                <li>{% trans "Email:" %} <a href="mailto:info@digitalmsharika.org" class="text-white-50">info@digitalmsharika.org</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-start mt-3">
+            <a href="#" class="text-white-50 mr-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-white-50 mr-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white-50 mr-3"><i class="fab fa-youtube fa-lg"></i></a>
+            <a href="#" class="text-white-50"><i class="fas fa-mobile-alt fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-md-left mt-4 small">
+        {% blocktrans %}&copy; 2026 KKKT Salasala DMP. All Rights Reserved.{% endblocktrans %} | <a href="{% url 'login' %}" class="text-white-50">{% trans "Login" %}</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/landing.js' %}"></script>
+</body>
+</html>

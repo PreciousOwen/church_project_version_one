@@ -1,0 +1,24 @@
+{% load static i18n %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'landing' %}">
+      <img src="/media/logo/kkkt-logo.jpg" alt="KKKT Salasala DMP logo" class="landing-logo" />
+      <span>KKKT Salasala DMP</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="{% trans "Toggle navigation" %}">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ml-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="{% url 'landing' %}">{% trans "Home" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">{% trans "About" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'events' %}">{% trans "Events" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'ministries' %}">{% trans "Ministries" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+        <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+          <a class="btn btn-outline-light btn-sm" href="{% url 'login' %}">{% trans "Sign in" %}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

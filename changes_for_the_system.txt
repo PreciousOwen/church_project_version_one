@@ -1,0 +1,4 @@
+i need the following changes
+instead of all people being registered by the admin then do the following, the admin is capable of registering people but also add a sign up page where people register themselves by using their phone numbers and password then on sign in they use the same password, and this would get them to a page whereby they will fill the forms for adding user but 
+NOTE: the membership no is provided by the admin so after a user has signed in and filled the form the form will go directly to the admin in the section of queries and he'll see how many people have filled the form and from there he can assign the membership number 
+so generally the admin is the approver 

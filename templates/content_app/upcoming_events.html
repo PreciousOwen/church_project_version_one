@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Upcoming events" %}{% endblock %}
+{% block header %}{% trans "Upcoming events" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Landing page events" %}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <a class="btn" href="{% url 'content:upcoming-event-add' %}">{% trans "New upcoming event" %}</a>
+        {% endif %}
+    </div>
+</section>
+
+<section class="card">
+    <div class="list">
+        {% for event in events %}
+            <div class="list-item">
+                <div>
+                    <div class="list-title">{{ event.title }}</div>
+                    <div class="muted">
+                        {% if event.event_date %}
+                            {{ event.event_date|date:'M d, Y' }}
+                        {% else %}
+                            {% trans "Date not set" %}
+                        {% endif %}
+                        • {% if event.is_active %}{% trans "Active" %}{% else %}{% trans "Hidden" %}{% endif %}
+                    </div>
+                </div>
+                <div>
+                    {% if user.is_superuser or user.id == 1 %}
+                        <a class="btn ghost" href="{% url 'content:upcoming-event-update' event.pk %}">{% trans "Edit" %}</a>
+                        <a class="btn ghost" href="{% url 'content:upcoming-event-delete' event.pk %}">{% trans "Delete" %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p class="muted">{% trans "No upcoming events added." %}</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

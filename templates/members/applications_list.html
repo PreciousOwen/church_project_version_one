@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Member queries" %}{% endblock %}
+{% block header %}{% trans "Member queries" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Registration requests" %}</h2>
+    </div>
+    <form method="get" class="form">
+        <div class="form-grid">
+            <label>
+                <span>{% trans "Status" %}</span>
+                <select name="status" class="form-select">
+                    <option value="">{% trans "All" %}</option>
+                    <option value="pending" {% if request.GET.status == 'pending' %}selected{% endif %}>{% trans "Pending" %}</option>
+                    <option value="approved" {% if request.GET.status == 'approved' %}selected{% endif %}>{% trans "Approved" %}</option>
+                    <option value="rejected" {% if request.GET.status == 'rejected' %}selected{% endif %}>{% trans "Rejected" %}</option>
+                </select>
+            </label>
+            <div>
+                <span>&nbsp;</span>
+                <button class="btn" type="submit">{% trans "Filter" %}</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Phone" %}</th>
+                <th>{% trans "Status" %}</th>
+                <th>{% trans "Submitted" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for application in applications %}
+                <tr>
+                    <td>{{ application.full_name }}</td>
+                    <td>{{ application.primary_phone }}</td>
+                    <td>{{ application.get_status_display }}</td>
+                    <td>{{ application.created_at|date:"M d, Y" }}</td>
+                    <td>
+                        <a class="btn ghost" href="{% url 'members:application-approve' application.pk %}">{% trans "Review" %}</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5" class="muted">{% trans "No applications found." %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

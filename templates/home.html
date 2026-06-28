@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Dashboard" %} - KKKT Salasala DMP{% endblock %}
+
+{% block header %}{% trans "Dashboard" %}{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <h1>{% trans "Church Information" %}</h1>
+        <p class="muted">{% trans "Track members, fellowships, pledges, and announcements in one place." %}</p>
+    </div>
+</section>
+
+<section class="grid cards">
+    {% if user.is_superuser or user.id == 1 %}
+        <div class="card stat">
+            <div class="stat-title">{% trans "Members" %}</div>
+            <div class="stat-value">{{ member_count|default:0 }}</div>
+            <div class="stat-foot">{% trans "Active records in this tenant" %}</div>
+        </div>
+        <div class="card stat">
+            <div class="stat-title">{% trans "Member queries" %}</div>
+            <div class="stat-value">{{ pending_applications|default:0 }}</div>
+            <div class="stat-foot">{% trans "Pending applications" %}</div>
+        </div>
+        <div class="card stat">
+            <div class="stat-title">{% trans "Fellowship Groups" %}</div>
+            <div class="stat-value">{{ fellowship_count|default:0 }}</div>
+            <div class="stat-foot">{% trans "Community and ministry groups" %}</div>
+        </div>
+        <div class="card stat">
+            <div class="stat-title">{% trans "Pledges" %}</div>
+            <div class="stat-value">{{ pledge_count|default:0 }}</div>
+            <div class="stat-foot">{% trans "Recorded financial commitments" %}</div>
+        </div>
+    {% else %}
+        <div class="card stat">
+            <div class="stat-title">{% trans "My name" %}</div>
+            <div class="stat-value">{{ member_full_name|truncatewords:2 }}</div>
+            <div class="stat-foot">{% trans "Member profile" %}</div>
+        </div>
+        <div class="card stat">
+            <div class="stat-title">{% trans "My Fellowships" %}</div>
+            <div class="stat-value">{{ fellowship_count|default:0 }}</div>
+            <div class="stat-foot">{% trans "Community and ministry groups" %}</div>
+        </div>
+        <div class="card stat">
+            <div class="stat-title">{% trans "My Pledges" %}</div>
+            <div class="stat-value">{{ pledge_count|default:0 }}</div>
+            <div class="stat-foot">{% trans "Recorded financial commitments" %}</div>
+        </div>
+    {% endif %}
+</section>
+
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Recent announcements" %}</h2>
+        <a class="btn ghost" href="{% url 'content:announcements' %}">{% trans "View all" %}</a>
+    </div>
+    <div class="list">
+        {% for announcement in recent_announcements %}
+            <div class="list-item">
+                <div>
+                    <div class="list-title">{{ announcement.title }}</div>
+                    <div class="muted">{{ announcement.published_at|date:'M d, Y' }} • {{ announcement.get_category_display }}</div>
+                </div>
+                <span class="badge">{{ announcement.get_category_display }}</span>
+            </div>
+        {% empty %}
+            <p class="muted">{% trans "No announcements yet." %}</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% if not user.is_superuser and not user.id == 1 %}
+    <section class="card">
+        <div class="card-head">
+            <h2>{% trans "My fellowship" %}</h2>
+            {% if member_fellowship %}
+                <a class="btn ghost" href="{% url 'fellowships:detail' member_fellowship.pk %}">{% trans "View group" %}</a>
+            {% endif %}
+        </div>
+        {% if member_fellowship %}
+            <p class="muted">{{ member_fellowship.name }}</p>
+            <div class="list">
+                {% for participation in fellowship_members %}
+                    <div class="list-item">
+                        <div class="list-title">{{ participation.member.full_name }}</div>
+                        <span class="badge">{{ participation.is_leader|yesno:_('Leader,Member') }}</span>
+                    </div>
+                {% empty %}
+                    <p class="muted">{% trans "No members listed yet." %}</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="muted">{% trans "Not engaged in fellowship program." %}</p>
+        {% endif %}
+    </section>
+{% endif %}
+{% endblock %}

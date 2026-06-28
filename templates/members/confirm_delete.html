@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete member" %}{% endblock %}
+{% block header %}{% trans "Delete member" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    {% if user.is_superuser or user.id == 1 %}
+        <h2>{% trans "Are you sure?" %}</h2>
+        <p class="muted">{% blocktrans with name=object.full_name %}This will permanently delete {{ name }}.{% endblocktrans %}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">{% trans "Yes, delete" %}</button>
+            <a class="btn ghost" href="{% url 'members:detail' object.pk %}">{% trans "Cancel" %}</a>
+        </form>
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to delete members." %}</p>
+    {% endif %}
+</section>
+{% endblock %}

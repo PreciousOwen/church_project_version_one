@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Pledges" %}{% endblock %}
+{% block header %}{% trans "Pledges" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Financial pledges" %}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <a class="btn" href="{% url 'pledges:create' %}">{% trans "Record pledge" %}</a>
+        {% endif %}
+    </div>
+    <form method="get" class="form">
+        <div class="form-grid">
+            <label>
+                <span>{% trans "Year" %}</span>
+                <input type="text" name="year" value="{{ selected_year }}" placeholder="2026" class="form-control" inputmode="numeric" />
+            </label>
+            <label>
+                <span>{% trans "Season" %}</span>
+                <select name="season" class="form-select">
+                    <option value="annual" {% if selected_season == "annual" %}selected{% endif %}>{% trans "Full year" %}</option>
+                    <option value="h1" {% if selected_season == "h1" %}selected{% endif %}>{% trans "Jan - Jun (6 months)" %}</option>
+                    <option value="h2" {% if selected_season == "h2" %}selected{% endif %}>{% trans "Jul - Dec (6 months)" %}</option>
+                </select>
+            </label>
+            <label>
+                <span>{% trans "Search year or amount" %}</span>
+                <input type="text" name="q" value="{{ selected_query }}" placeholder="{% trans 'e.g. 2026 or 150000' %}" class="form-control" inputmode="numeric" />
+            </label>
+            <div>
+                <span>&nbsp;</span>
+                <button class="btn" type="submit">{% trans "Filter" %}</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="grid cards">
+    <div class="card stat">
+        <div class="stat-title">{% trans "Records in season" %}</div>
+        <div class="stat-value">{{ period_record_count|default:0 }}</div>
+        <div class="stat-foot">{% trans "Pledges captured in selected period" %}</div>
+    </div>
+    <div class="card stat">
+        <div class="stat-title">{% trans "Building total" %}</div>
+        <div class="stat-value">{{ building_total_display }}</div>
+        <div class="stat-foot">{% trans "Selected year/season" %}</div>
+    </div>
+    <div class="card stat">
+        <div class="stat-title">{% trans "Stewardship total" %}</div>
+        <div class="stat-value">{{ stewardship_total_display }}</div>
+        <div class="stat-foot">{% trans "Selected year/season" %}</div>
+    </div>
+    <div class="card stat">
+        <div class="stat-title">{% trans "Other total" %}</div>
+        <div class="stat-value">{{ other_total_display }}</div>
+        <div class="stat-foot">{% trans "Selected year/season" %}</div>
+    </div>
+</section>
+
+<section class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans "Member" %}</th>
+                <th>{% trans "Year" %}</th>
+                <th>{% trans "Building" %}</th>
+                <th>{% trans "Stewardship" %}</th>
+                <th>{% trans "Other" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pledge in pledges %}
+                <tr>
+                    <td>{{ pledge.member.full_name }}</td>
+                    <td>{{ pledge.year }}</td>
+                    <td>{{ pledge.building_pledge_display }}</td>
+                    <td>{{ pledge.stewardship_pledge_display }}</td>
+                    <td>{{ pledge.other_pledges_display }}</td>
+                    <td>
+                        {% if user.is_superuser or user.id == 1 %}
+                            <a class="btn ghost" href="{% url 'pledges:update' pledge.pk %}">{% trans "Edit" %}</a>
+                            <a class="btn ghost" href="{% url 'pledges:delete' pledge.pk %}">{% trans "Delete" %}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6" class="muted">{% trans "No pledges recorded." %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% if is_paginated %}
+<section class="card">
+    <div class="list">
+        <div class="list-item">
+            <div>
+                {% blocktrans with page=page_obj.number total=paginator.num_pages %}Page {{ page }} of {{ total }}{% endblocktrans %}
+            </div>
+            <div>
+                {% if page_obj.has_previous %}
+                    <a class="btn ghost" href="?page={{ page_obj.previous_page_number }}&year={{ selected_year|urlencode }}&season={{ selected_season|urlencode }}&q={{ selected_query|urlencode }}">{% trans "Previous" %}</a>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a class="btn ghost" href="?page={{ page_obj.next_page_number }}&year={{ selected_year|urlencode }}&season={{ selected_season|urlencode }}&q={{ selected_query|urlencode }}">{% trans "Next" %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,64 @@
+﻿Project Blueprint: Digital Msharika (KKKT-DMP)
+Target: Evangelical Lutheran Church in Tanzania (East & Coastal Diocese)
+Fiscal Year: 2026 Strategy
+Author: Gemini AI / Project Lead
+1. Executive Summary
+The Digital Msharika Project aims to digitize the manual "Census and Pledge" forms used by the KKKT-DMP. By migrating from paper to a relational database, the church will gain actionable insights into its congregation's demographics, professional skills, and spiritual growth, while providing members with a modern, engaging interface for daily church life.
+2. Problem Statement
+The current manual system (Page 1 & 2 of the Parish Form) suffers from:
+* Data Inaccessibility: Records are physically stored, making it impossible to search for professional skills or demographic trends.
+* Disconnected Members: Lack of a feedback loop regarding spiritual milestones or fellowship activities.
+* Engagement Gap: Members only interact with church administration during Sunday services or office hours.
+* Financial Ambiguity: Manual tracking of 2026 Pledges (Ahadi) is prone to error and lacks transparency for the member.
+3. Database Architecture (ERD Mapping)
+The database is structured to mirror the 100+ data points across the two uploaded form pages.
+Core Tables & Relationships
+A. Member Profile (Section A & B)
+Maps to the primary personal and contact fields.
+* member_id (PK)
+* membership_no (Unique Namba ya Ahadi)
+* full_name, gender, dob, marital_status
+* marriage_details (Type, Date, Location, Spouse Name)
+* contact_details (Primary Phone, Email, Residence Area, House/Block No)
+* church_hierarchy (Previous Parish, Elder Name, Elder Phone)
+B. Spiritual & Professional Progress (Section C & D)
+Tracks the "Journey of Faith" and the "Marketplace Skills."
+* is_baptized (Boolean) & baptism_date
+* is_confirmed (Boolean) & confirmation_date
+* takes_communion (Boolean)
+* profession & education_level
+* occupation & work_place
+* volunteer_status (Willingness to serve)
+C. Fellowship & Group Participation (Section E)
+* fellowship_id (FK to a Master Fellowships table)
+* group_flags (Individual Booleans for: Choir Kuu, Uinjilisti, Tarumbeta, Sunday School, Women’s Union, Youth Union, etc.)
+* fellowship_leader_info
+D. Financial Pledges (Section F)
+* building_pledge_2026 (Decimal)
+* stewardship_pledge_2026 (Decimal)
+* other_pledges (Decimal)
+* submission_date
+4. Key Components & Features
+Feature 1: The Spiritual Roadmap (User Dashboard)
+* Visual Milestones: A "Progress Bar" showing icons for Baptism, Confirmation, and Choir Membership. Unlocked milestones appear in color; pending ones are grayscale.
+* Digital ID: A QR-code enabled digital membership card using the member's photo and registration number.
+Feature 2: Fellowship Finder (Community Link)
+* Smart Matching: Uses the member's "Residence Area" to automatically suggest the nearest Nyumba kwa Nyumba (House-to-House) group.
+* Leadership Access: One-tap calling/messaging for the assigned Church Elder (Mzee wa Kanisa) or Fellowship Chairperson.
+Feature 3: The Parish Feed (Daily Engagement)
+* Daily Liturgy: Digital access to the day's readings, order of service, and hymns.
+* Matangazo (Announcements): A real-time feed for Wedding Bans, Funerals, and General Parish news, categorized for easy filtering.
+* Verse of the Day: Automated daily bread notifications sent by the Admin.
+Feature 4: Skill-Based Marketplace
+* Internal Networking: A directory allowing members to find service providers (e.g., "Find a Mechanic in our Parish") based on the profession field captured in the form.
+5. Technical Stack & Scalability
+* Database: PostgreSQL (for relational integrity)
+* Backend: Node.js / Python (FastAPI)
+* Frontend: React Native (to target both Android and iOS users in Tanzania)
+* International Readiness: - Localization: Language files for Swahili, English, and German.
+   * Multi-Tenant: Architecture allows other KKKT Dioceses or different denominations (e.g., Catholic/Anglican) to use the same system with custom fields.
+6. Implementation Roadmap
+1. Phase 1: Database migration and Admin Data Entry Portal.
+2. Phase 2: Launch Member Dashboard and Fellowship Finder.
+3. Phase 3: Integrate Daily Liturgy and Push Notifications.
+4. Phase 4: Expand to Diocese-wide analytics for Bishops and District Pastors.

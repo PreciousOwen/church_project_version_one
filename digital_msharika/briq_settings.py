@@ -1,0 +1,9 @@
+BRIQ_OTP_BASE_URL = "https://karibu.briq.tz/v1/otp"
+BRIQ_OTP_API_KEY = "LprinJWYqSM41sE-P-AG0fzUDnrDSf9MCfgxreafE8A"  # Set your Briq API key here
+BRIQ_OTP_APP_KEY = "briq_21hqlxwifxwe7b1g"  # Set your Briq app key here
+BRIQ_OTP_LENGTH = 6
+BRIQ_SENDER_ID = "KKKTDMP"
+BRIQ_OTP_EXPIRE_MINUTES = 10
+BRIQ_OTP_DELIVERY_METHOD = "sms"
+BRIQ_OTP_MESSAGE_TEMPLATE = "Your verification code for KKKT-DMP is {code}"
+BRIQ_WEBHOOK_SECRET = ""

@@ -1,0 +1,4 @@
+.venv
+sql_dump_dmp.sql
+data-migration.json
+__pycache__

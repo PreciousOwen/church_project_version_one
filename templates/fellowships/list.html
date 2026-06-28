@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Fellowships" %}{% endblock %}
+{% block header %}{% trans "Fellowship groups" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Fellowship groups" %}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <div>
+                <a class="btn" href="{% url 'fellowships:create' %}">{% trans "Create group" %}</a>
+                <a class="btn ghost" href="{% url 'fellowships:participation-add' %}">{% trans "Add member" %}</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans "Group" %}</th>
+                <th>{% trans "Leader" %}</th>
+                <th>{% trans "Phone" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in groups %}
+                <tr>
+                    <td>{{ group.name }}</td>
+                    <td>{{ group.leader_name }}</td>
+                    <td>{{ group.leader_phone }}</td>
+                    <td><a class="btn ghost" href="{% url 'fellowships:detail' group.pk %}">{% trans "View" %}</a></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4" class="muted">{% trans "No fellowship groups yet." %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

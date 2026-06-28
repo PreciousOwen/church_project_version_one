@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Members" %} - KKKT Salasala DMP{% endblock %}
+{% block header %}{% trans "Members" %}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="card-head">
+        <h2>{% trans "Member directory" %}</h2>
+        {% if user.is_superuser or user.id == 1 %}
+            <a class="btn" href="{% url 'members:create' %}">{% trans "Add member" %}</a>
+        {% endif %}
+    </div>
+    <form method="get" class="form">
+        <div class="form-grid">
+            <label>
+                <span>{% trans "Search" %}</span>
+                <input type="text" name="q" value="{{ search_query }}" placeholder="{% trans "Name or membership number" %}" />
+            </label>
+            <div>
+                <span>&nbsp;</span>
+                <button class="btn" type="submit">{% trans "Search" %}</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Membership No" %}</th>
+                <th>{% trans "Phone" %}</th>
+                <th>{% trans "Residence" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member.full_name }}</td>
+                    <td>{{ member.membership_no }}</td>
+                    <td>{{ member.primary_phone }}</td>
+                    <td>{{ member.residence_name|default:'-' }}</td>
+                    <td><a class="btn ghost" href="{% url 'members:detail' member.pk %}">{% trans "View" %}</a></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5" class="muted">{% trans "No members found." %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% if is_paginated %}
+<section class="card">
+    <div class="list">
+        <div class="list-item">
+            <div>
+                {% blocktrans with page=page_obj.number total=paginator.num_pages %}Page {{ page }} of {{ total }}{% endblocktrans %}
+            </div>
+            <div>
+                {% if page_obj.has_previous %}
+                    <a class="btn ghost" href="?page={{ page_obj.previous_page_number }}&q={{ search_query }}">{% trans "Previous" %}</a>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a class="btn ghost" href="?page={{ page_obj.next_page_number }}&q={{ search_query }}">{% trans "Next" %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

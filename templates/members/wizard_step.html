@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ title }} - Member{% endblock %}
+{% block header %}{{ title }}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% if step == 6 %}
+            <section class="card">
+                <h3>{% trans "Fellowship and service interest" %}</h3>
+                <div class="checkbox-grid">
+                    <label>
+                        {{ form.join_fellowship }}
+                        <span>{% if form.join_fellowship.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.join_fellowship.label }}</span>
+                    </label>
+                    <label>
+                        {{ form.join_sunday_school }}
+                        <span>{% if form.join_sunday_school.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.join_sunday_school.label }}</span>
+                    </label>
+                    <label>
+                        {{ form.join_visiting_sick }}
+                        <span>{% if form.join_visiting_sick.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.join_visiting_sick.label }}</span>
+                    </label>
+                    <label>
+                        {{ form.join_bible_study }}
+                        <span>{% if form.join_bible_study.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.join_bible_study.label }}</span>
+                    </label>
+                    <label>
+                        {{ form.join_choir }}
+                        <span>{% if form.join_choir.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.join_choir.label }}</span>
+                    </label>
+                    <label>
+                        {{ form.join_union }}
+                        <span>{% if form.join_union.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.join_union.label }}</span>
+                    </label>
+                </div>
+            </section>
+            {% if application_mode %}
+                <section class="card">
+                    <h3>{% trans "Pledge details" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.pledge_year.label }}</span>
+                            {{ form.pledge_year }}
+                            {% if form.pledge_year.errors %}
+                                <small class="muted">{{ form.pledge_year.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.pledge_building.label }}</span>
+                            {{ form.pledge_building }}
+                            {% if form.pledge_building.errors %}
+                                <small class="muted">{{ form.pledge_building.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.pledge_stewardship.label }}</span>
+                            {{ form.pledge_stewardship }}
+                            {% if form.pledge_stewardship.errors %}
+                                <small class="muted">{{ form.pledge_stewardship.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.pledge_other.label }}</span>
+                            {{ form.pledge_other }}
+                            {% if form.pledge_other.errors %}
+                                <small class="muted">{{ form.pledge_other.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                </section>
+                <section class="card">
+                    <h3>{% trans "Membership number details" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.has_membership_number.label }}</span>
+                            {{ form.has_membership_number }}
+                            {% if form.has_membership_number.errors %}
+                                <small class="muted">{{ form.has_membership_number.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.membership_number.label }}</span>
+                            {{ form.membership_number }}
+                            {% if form.membership_number.errors %}
+                                <small class="muted">{{ form.membership_number.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.membership_registration_date.label }}</span>
+                            {{ form.membership_registration_date }}
+                            {% if form.membership_registration_date.errors %}
+                                <small class="muted">{{ form.membership_registration_date.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.membership_registered_full_name.label }}</span>
+                            {{ form.membership_registered_full_name }}
+                            {% if form.membership_registered_full_name.errors %}
+                                <small class="muted">{{ form.membership_registered_full_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                </section>
+            {% endif %}
+            {% if not application_mode %}
+                <div class="form-grid">
+                    <label>
+                        <span>{% if form.password.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ form.password.label }}</span>
+                        {{ form.password }}
+                        {% if form.password.errors %}
+                            <small class="muted">{{ form.password.errors|striptags }}</small>
+                        {% endif %}
+                    </label>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="form-grid">
+                {% for field in form %}
+                    {% if field.name == "dependents" %}
+                        {% if step == 1 %}
+                            <label class="dependents-field">
+                                <span>{% if field.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ field.label }}</span>
+                                <input type="hidden" name="{{ field.name }}" id="{{ field.id_for_label }}" value="{{ field.value|default:'[]' }}">
+                                <div class="dependents-table">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>{% trans "Full name" %}</th>
+                                                <th>{% trans "Date of birth" %}</th>
+                                                <th>{% trans "Relationship" %}</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="dependents-list"></tbody>
+                                    </table>
+                                </div>
+                                <button class="btn ghost dependents-add" type="button">{% trans "Add dependent" %}</button>
+                                {% if field.errors %}
+                                    <small class="muted">{{ field.errors|striptags }}</small>
+                                {% endif %}
+                            </label>
+                        {% endif %}
+                    {% else %}
+                        <label>
+                            <span>{% if field.field.required %}<span class="required-mark">{% trans "Required field" %}</span>{% endif %} {{ field.label }}</span>
+                            {{ field }}
+                            {% if field.errors %}
+                                <small class="muted">{{ field.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="step-actions">
+            {% if prev_url %}
+                <a class="btn ghost" href="{{ prev_url }}">{% trans "Previous" %}</a>
+            {% endif %}
+            {% if next_url %}
+                <button class="btn" type="submit">{% trans "Next" %}</button>
+            {% else %}
+                <button class="btn" type="submit">{% trans "Save" %}</button>
+            {% endif %}
+        </div>
+    </form>
+</section>
+{% endblock %}

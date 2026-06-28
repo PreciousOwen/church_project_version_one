@@ -1,0 +1,35 @@
+when a person signs up use the verification system below
+
+############## otp requesting ########################
+
+curl -X POST https://karibu.briq.tz/v1/otp/request ^
+ -H "X-API-Key: LprinJWYqSM41sE-P-AG0fzUDnrDSf9MCfgxreafE8A" ^
+ -H "Content-Type: application/json" ^
+ -d "{\"phone_number\": \"255621437851\", \"app_key\": \"briq_21hqlxwifxwe7b1g\", \"otp_length\": 6, \"minutes_to_expire\": 10, \"delivery_method\": \"sms\", \"message_template\": \"Your verification code for KKKT-DMP is {code}\"}"
+
+
+ ############ message post for verification #################
+
+ curl -X POST https://karibu.briq.tz/v1/otp/verify ^
+ -H "X-API-Key: LprinJWYqSM41sE-P-AG0fzUDnrDSf9MCfgxreafE8A" ^
+ -H "Content-Type: application/json" ^
+ -d "{\"phone_number\": \"255621437851\", \"app_key\": \"briq_21hqlxwifxwe7b1g\", \"code\": \"REPLACE_WITH_CODE_FROM_SMS\"}"
+
+
+ ################################################################
+
+
+ so you can use these for the signup part and lastly create anoter url for sms webhook data receiving you can design it but here is how the webhook code should be 
+
+ import hmac
+import hashlib
+
+def verify_briq_signature(*, raw_body: bytes, secret: str, signature_header: str) -> bool:
+    prefix = "sha256="
+    if not signature_header.startswith(prefix):
+        return False
+    expected_hex = signature_header[len(prefix) :]
+    digest = hmac.new(secret.encode("utf-8"), raw_body, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(digest, expected_hex)
+
+#######################################################################

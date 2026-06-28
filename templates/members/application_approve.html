@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Review application" %}{% endblock %}
+{% block header %}{% trans "Review application" %}{% endblock %}
+
+{% block content %}
+{% trans "Yes,No" as YES_NO %}
+<section class="card">
+    <div class="card-head">
+        <h2>{{ application.full_name }}</h2>
+        <span class="badge">{{ application.get_status_display }}</span>
+    </div>
+    <div class="grid cards">
+        <div class="card">
+            <h3>{% trans "Personal information" %}</h3>
+            <p class="muted">{% trans "Gender:" %} {{ application.gender|default:'-' }}</p>
+            <p class="muted">{% trans "Date of birth:" %} {{ application.dob|default:'-' }}</p>
+            <p class="muted">{% trans "Place of birth:" %} {{ application.place_of_birth|default:'-' }}</p>
+            <p class="muted">{% trans "Marital status:" %} {{ application.marital_status|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Contact" %}</h3>
+            <p class="muted">{% trans "Phone:" %} {{ application.primary_phone }}</p>
+            <p class="muted">{% trans "Spouse phone:" %} {{ application.spouse_phone|default:'-' }}</p>
+            <p class="muted">{% trans "Email:" %} {{ application.email|default:'-' }}</p>
+            <p class="muted">{% trans "P.O. Box:" %} {{ application.po_box|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Residence" %}</h3>
+            <p class="muted">{% trans "Residence name:" %} {{ application.residence_name|default:'-' }}</p>
+            <p class="muted">{% trans "Block number:" %} {{ application.block_number|default:'-' }}</p>
+            <p class="muted">{% trans "House number:" %} {{ application.house_number|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Marriage & spouse" %}</h3>
+            <p class="muted">{% trans "Marriage type:" %} {{ application.marriage_type|default:'-' }}</p>
+            <p class="muted">{% trans "Marriage date:" %} {{ application.marriage_date|default:'-' }}</p>
+            <p class="muted">{% trans "Marriage place:" %} {{ application.marriage_place|default:'-' }}</p>
+            <p class="muted">{% trans "Spouse name:" %} {{ application.spouse_name|default:'-' }}</p>
+            <p class="muted">{% trans "Living with spouse name:" %} {{ application.living_with_spouse_name|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Dependents" %}</h3>
+            {% if application.dependents %}
+                <ul class="muted">
+                    {% for dependent in application.dependents %}
+                        <li>
+                            {{ dependent.full_name|default:'-' }}
+                            {% if dependent.relationship %}({{ dependent.relationship }}){% endif %}
+                            {% if dependent.dob %} - {{ dependent.dob }}{% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="muted">-</p>
+            {% endif %}
+        </div>
+        <div class="card">
+            <h3>{% trans "Fellowship & parish" %}</h3>
+            <p class="muted">{% trans "Fellowship name:" %} {{ application.fellowship_name|default:'-' }}</p>
+            <p class="muted">{% trans "Previous parish:" %} {{ application.previous_parish|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Neighbors & elders" %}</h3>
+            <p class="muted">{% trans "Neighbor name:" %} {{ application.neighbor_name|default:'-' }}</p>
+            <p class="muted">{% trans "Neighbor phone:" %} {{ application.neighbor_phone|default:'-' }}</p>
+            <p class="muted">{% trans "Elder name:" %} {{ application.elder_name|default:'-' }}</p>
+            <p class="muted">{% trans "Elder phone:" %} {{ application.elder_phone|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Education & work" %}</h3>
+            <p class="muted">{% trans "Education level:" %} {{ application.education_level|default:'-' }}</p>
+            <p class="muted">{% trans "Profession:" %} {{ application.profession|default:'-' }}</p>
+            <p class="muted">{% trans "Occupation:" %} {{ application.occupation|default:'-' }}</p>
+            <p class="muted">{% trans "Work place:" %} {{ application.work_place|default:'-' }}</p>
+            <p class="muted">{% trans "Volunteer status:" %} {{ application.volunteer_status|yesno:YES_NO }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Spiritual status" %}</h3>
+            <p class="muted">{% trans "Baptized:" %} {{ application.is_baptized|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Baptism date:" %} {{ application.baptism_date|default:'-' }}</p>
+            <p class="muted">{% trans "Confirmed:" %} {{ application.is_confirmed|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Confirmation date:" %} {{ application.confirmation_date|default:'-' }}</p>
+            <p class="muted">{% trans "Participates in sacraments:" %} {{ application.participates_in_sacraments|yesno:YES_NO }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Fellowship participation" %}</h3>
+            <p class="muted">{% trans "Participates in fellowship:" %} {{ application.participates_in_fellowship|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Fellowship house name:" %} {{ application.fellowship_house_name|default:'-' }}</p>
+            <p class="muted">{% trans "Non-participation reason:" %} {{ application.fellowship_non_participation_reason|default:'-' }}</p>
+            <p class="muted">{% trans "Chairperson name:" %} {{ application.fellowship_chairperson_name|default:'-' }}</p>
+            <p class="muted">{% trans "Chairperson signature:" %} {{ application.fellowship_chairperson_signature|default:'-' }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Service interests" %}</h3>
+            <p class="muted">{% trans "Join fellowship:" %} {{ application.join_fellowship|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Join Sunday school:" %} {{ application.join_sunday_school|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Join visiting sick:" %} {{ application.join_visiting_sick|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Join Bible study:" %} {{ application.join_bible_study|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Join choir:" %} {{ application.join_choir|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Join union:" %} {{ application.join_union|yesno:YES_NO }}</p>
+        </div>
+        <div class="card">
+            <h3>{% trans "Membership number details" %}</h3>
+            <p class="muted">{% trans "Has previous membership number:" %} {{ application.has_membership_number|yesno:YES_NO }}</p>
+            <p class="muted">{% trans "Claimed membership number:" %} {{ application.membership_number|default:'-' }}</p>
+            <p class="muted">{% trans "Registration date:" %} {{ application.membership_registration_date|default:'-' }}</p>
+            <p class="muted">{% trans "Registered full name:" %} {{ application.membership_registered_full_name|default:'-' }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <h3>{% trans "Assign or update membership number" %}</h3>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-grid">
+            <label>
+                <span>{{ form.membership_no.label }}</span>
+                {{ form.membership_no }}
+                {% if form.membership_no.errors %}
+                    <small class="muted">{{ form.membership_no.errors|striptags }}</small>
+                {% endif %}
+            </label>
+        </div>
+        <button class="btn" type="submit">{% trans "Approve" %}</button>
+    </form>
+</section>
+{% endblock %}

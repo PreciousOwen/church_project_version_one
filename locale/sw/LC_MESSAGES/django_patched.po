@@ -1,0 +1,2481 @@
+# Swahili translations for KKKT Salasala DMP
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KKKT Salasala DMP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-10 22:55+0300\n"
+"PO-Revision-Date: 2026-03-29 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\members\forms.py:9
+msgid "Male"
+msgstr "Mwanaume"
+
+#: .\members\forms.py:9
+msgid "Female"
+msgstr "Mwanamke"
+
+#: .\members\forms.py:11
+msgid "Single"
+msgstr "Hajaoa/Hajaolewa"
+
+#: .\members\forms.py:12
+msgid "Married"
+msgstr "Ameoa/Ameolewa"
+
+#: .\members\forms.py:13
+msgid "Widowed"
+msgstr "Mjane/Mgane"
+
+#: .\members\forms.py:14
+msgid "Divorced"
+msgstr "Aliyeachika"
+
+#: .\members\forms.py:17
+msgid "Church"
+msgstr "Kanisani"
+
+#: .\members\forms.py:18
+msgid "Traditional"
+msgstr "Kimila"
+
+#: .\members\forms.py:19
+msgid "Civil"
+msgstr "Kiraia"
+
+#: .\members\forms.py:22
+msgid "Primary"
+msgstr "Msingi"
+
+#: .\members\forms.py:23
+msgid "Secondary"
+msgstr "Sekondari"
+
+#: .\members\forms.py:24
+msgid "Certificate"
+msgstr "Cheti"
+
+#: .\members\forms.py:25
+msgid "Diploma"
+msgstr "Stashahada"
+
+#: .\members\forms.py:26
+msgid "Degree"
+msgstr "Shahada"
+
+#: .\members\forms.py:27
+msgid "Masters"
+msgstr "Shahada ya uzamili"
+
+#: .\members\forms.py:28
+msgid "PhD"
+msgstr "Shahada ya uzamivu (PhD)"
+
+#: .\members\forms.py:47 .\members\forms.py:242
+msgid ""
+"[{\"full_name\": \"John Doe\", \"dob\": \"2010-05-01\", \"relationship\": "
+"\"Son\"}]"
+msgstr ""
+"[{\"full_name\": \"John Doe\", \"dob\": \"2010-05-01\", \"relationship\": "
+"\"Son\"}]"
+
+#: .\members\forms.py:52 .\members\forms.py:247
+msgid "Enter a JSON list of dependents with full_name, dob, and relationship."
+msgstr ""
+"Weka orodha ya JSON ya wategemezi yenye full_name, dob, na relationship."
+
+# --- Form labels/placeholders/options (members/apply) ---
+#: .\members\forms.py:56 .\members\forms.py:251 .\members\forms.py:825
+msgid "---------"
+msgstr "---------"
+
+#: .\members\forms.py:61 .\members\forms.py:256 .\members\forms.py:461
+msgid "Yes"
+msgstr "Ndiyo"
+
+#: .\members\forms.py:61 .\members\forms.py:256 .\members\forms.py:461
+msgid "No"
+msgstr "Hapana"
+
+#: .\members\forms.py:480
+#, fuzzy
+#| msgid "Enter Phone Number"
+msgid "Enter a valid number."
+msgstr "Ingiza namba ya simu"
+
+#: .\members\forms.py:489
+#, fuzzy
+#| msgid "Enter Phone Number"
+msgid "Enter a valid year."
+msgstr "Ingiza namba ya simu"
+
+#: .\members\forms.py:510
+msgid "Enter the membership number."
+msgstr "Weka namba ya uanachama."
+
+#: .\members\forms.py:515
+#, fuzzy
+#| msgid "Registration date:"
+msgid "Enter the registration date."
+msgstr "Tarehe ya usajili:"
+
+#: .\members\forms.py:520
+msgid "Enter the full name used during registration."
+msgstr "[PENDING TRANSLATION] Enter the full name used during registration...."
+
+#: .\members\forms.py:757 .\members\forms.py:761
+msgid "Membership number"
+msgstr "Namba ya uanachama"
+
+#: .\members\forms.py:778
+msgid "Membership number is required."
+msgstr "Namba ya uanachama inahitajika."
+
+#: .\members\forms.py:800
+msgid ""
+"This claimed membership number belongs to a different member record while "
+"this user is already linked elsewhere. Resolve that conflict first."
+msgstr ""
+"Namba hii ya uanachama iliyodaiwa inahusiana na rekodi nyingine ya muumini "
+"wakati mtumiaji huyu tayari ameunganishwa kwingine. Tatua mgongano huo "
+"kwanza."
+
+#: .\members\forms.py:809
+msgid ""
+"A member with this membership number already exists. Please enter a "
+"different number."
+msgstr ""
+"Muumini wenye namba hii ya uanachama ipo tayari. Tafadhali weka namba "
+"tofauti."
+
+#: .\members\models.py:135 .\templates\members\applications_list.html:18
+msgid "Pending"
+msgstr "Inasubiri"
+
+#: .\members\models.py:136 .\templates\members\applications_list.html:19
+msgid "Approved"
+msgstr "Imeidhinishwa"
+
+#: .\members\models.py:137 .\templates\members\applications_list.html:20
+msgid "Rejected"
+msgstr "Imekataliwa"
+
+#: .\templates\base.html:49 .\templates\landing.html:43
+#: .\templates\public\about.html:40 .\templates\public\contact.html:40
+#: .\templates\public\events.html:40 .\templates\public\ministries.html:40
+msgid "Close menu"
+msgstr "Funga menyu"
+
+#: .\templates\base.html:53 .\templates\home.html:4 .\templates\home.html:6
+msgid "Dashboard"
+msgstr "Dashibodi"
+
+#: .\templates\base.html:54 .\templates\fellowships\detail.html:23
+#: .\templates\home.html:19 .\templates\members\list.html:4
+#: .\templates\members\list.html:5
+msgid "Members"
+msgstr "Waumini"
+
+#: .\templates\base.html:56 .\templates\home.html:24
+#: .\templates\members\applications_list.html:4
+#: .\templates\members\applications_list.html:5
+msgid "Member queries"
+msgstr "Waliojisajili"
+
+#: .\templates\base.html:61 .\templates\fellowships\list.html:4
+#: .\templates\public\ministries.html:109
+msgid "Fellowships"
+msgstr "Ushirika"
+
+#: .\templates\base.html:62 .\templates\home.html:34
+#: .\templates\pledges\list.html:4 .\templates\pledges\list.html:5
+msgid "Pledges"
+msgstr "Ahadi"
+
+#: .\templates\base.html:63 .\templates\base.html:71
+#: .\templates\content_app\announcements.html:4
+#: .\templates\content_app\announcements.html:5
+msgid "Announcements"
+msgstr "Matangazo"
+
+#: .\templates\base.html:64 .\templates\base.html:72
+#: .\templates\content_app\upcoming_events.html:4
+#: .\templates\content_app\upcoming_events.html:5
+msgid "Upcoming events"
+msgstr "Matukio yajayo"
+
+#: .\templates\base.html:65 .\templates\base.html:73
+msgid "Daily Liturgy"
+msgstr "Liturujia ya kila siku"
+
+#: .\templates\base.html:67 .\templates\members\detail.html:5
+#: .\templates\members\me.html:4 .\templates\members\me.html:5
+msgid "My profile"
+msgstr "Wasifu wangu"
+
+#: .\templates\base.html:68
+#, fuzzy
+#| msgid "Review application"
+msgid "Membership application"
+msgstr "Kagua ombi"
+
+#: .\templates\base.html:69 .\templates\home.html:80
+msgid "My fellowship"
+msgstr "Ushirika wangu"
+
+#: .\templates\base.html:70
+msgid "My pledges"
+msgstr "Ahadi zangu"
+
+#: .\templates\base.html:85 .\templates\base.html:112
+msgid "Sign out"
+msgstr "Toka"
+
+#: .\templates\base.html:87 .\templates\landing.html:51
+#: .\templates\landing.html:71 .\templates\login.html:8
+#: .\templates\login.html:271 .\templates\public\about.html:48
+#: .\templates\public\contact.html:48 .\templates\public\events.html:48
+#: .\templates\public\ministries.html:48
+#: .\templates\public\partials_nav.html:19 .\templates\signup.html:311
+msgid "Sign in"
+msgstr "Ingia"
+
+#: .\templates\base.html:96
+#, fuzzy
+#| msgid "Close menu"
+msgid "Toggle menu"
+msgstr "Funga menyu"
+
+#: .\templates\base.html:98 .\templates\landing.html:68
+msgid "Welcome"
+msgstr "Karibu"
+
+#: .\templates\base.html:101
+msgid "Change language"
+msgstr "[PENDING TRANSLATION] Change language..."
+
+#: .\templates\base.html:109
+msgid "Tenant"
+msgstr "Tenant"
+
+#: .\templates\content_app\announcement_form.html:4
+#: .\templates\content_app\announcement_form.html:5
+msgid "Announcement"
+msgstr "Tangazo"
+
+#: .\templates\content_app\announcement_form.html:24
+#: .\templates\content_app\liturgy_form.html:24
+#: .\templates\content_app\upcoming_event_form.html:27
+#: .\templates\fellowships\form.html:24
+#: .\templates\fellowships\participation_form.html:24
+#: .\templates\members\form.html:397 .\templates\members\wizard_step.html:167
+#: .\templates\pledges\form.html:24
+msgid "Save"
+msgstr "Hifadhi"
+
+#: .\templates\content_app\announcement_form.html:27
+msgid "You do not have permission to edit announcements."
+msgstr "Huna ruhusa ya kuhariri matangazo."
+
+#: .\templates\content_app\announcements.html:10
+msgid "Parish announcements"
+msgstr "Matangazo ya parokia"
+
+#: .\templates\content_app\announcements.html:12
+msgid "New announcement"
+msgstr "Tangazo jipya"
+
+#: .\templates\content_app\announcements.html:18
+msgid "Category"
+msgstr "Kategoria"
+
+#: .\templates\content_app\announcements.html:20
+#: .\templates\members\applications_list.html:17
+msgid "All"
+msgstr "Zote"
+
+#: .\templates\content_app\announcements.html:28
+#: .\templates\members\applications_list.html:25
+#: .\templates\pledges\list.html:35
+msgid "Filter"
+msgstr "Chuja"
+
+#: .\templates\content_app\announcements.html:44
+#: .\templates\content_app\liturgy_list.html:33
+#: .\templates\content_app\upcoming_events.html:34
+#: .\templates\fellowships\detail.html:13 .\templates\members\detail.html:13
+#: .\templates\pledges\list.html:86
+msgid "Edit"
+msgstr "Hariri"
+
+#: .\templates\content_app\announcements.html:45
+#: .\templates\content_app\upcoming_event_confirm_delete.html:14
+#: .\templates\content_app\upcoming_events.html:35
+#: .\templates\pledges\list.html:87
+msgid "Delete"
+msgstr "Futa"
+
+#: .\templates\content_app\announcements.html:50
+msgid "No announcements published."
+msgstr "Bado hakuna matangazo yaliyotolewa."
+
+#: .\templates\content_app\confirm_delete.html:4
+#: .\templates\content_app\confirm_delete.html:5
+msgid "Delete announcement"
+msgstr "Futa tangazo"
+
+#: .\templates\content_app\confirm_delete.html:10
+msgid "Delete announcement?"
+msgstr "Unataka kufuta tangazo?"
+
+#: .\templates\content_app\confirm_delete.html:11
+#, python-format
+msgid "This will remove %(title)s."
+msgstr "Hii itaondoa %(title)s."
+
+#: .\templates\content_app\confirm_delete.html:14
+#: .\templates\fellowships\confirm_delete.html:14
+#: .\templates\members\confirm_delete.html:14
+#: .\templates\pledges\confirm_delete.html:14
+msgid "Yes, delete"
+msgstr "Ndiyo, futa"
+
+#: .\templates\content_app\confirm_delete.html:15
+#: .\templates\content_app\upcoming_event_confirm_delete.html:15
+#: .\templates\fellowships\confirm_delete.html:15
+#: .\templates\members\confirm_delete.html:15 .\templates\members\form.html:423
+#: .\templates\pledges\confirm_delete.html:15
+msgid "Cancel"
+msgstr "Ghairi"
+
+#: .\templates\content_app\confirm_delete.html:18
+msgid "You do not have permission to delete announcements."
+msgstr "Huna ruhusa ya kufuta matangazo."
+
+#: .\templates\content_app\liturgy_form.html:4
+#: .\templates\content_app\liturgy_form.html:5
+msgid "Liturgy"
+msgstr "Liturujia"
+
+#: .\templates\content_app\liturgy_form.html:27
+msgid "You do not have permission to edit liturgy entries."
+msgstr "Huna ruhusa ya kuhariri liturujia."
+
+#: .\templates\content_app\liturgy_list.html:4
+#: .\templates\content_app\liturgy_list.html:5
+#: .\templates\content_app\liturgy_list.html:10
+msgid "Daily liturgy"
+msgstr "Liturujia ya kila siku"
+
+#: .\templates\content_app\liturgy_list.html:12
+msgid "Add liturgy"
+msgstr "Ongeza liturujia"
+
+#: .\templates\content_app\liturgy_list.html:21
+msgid "Date"
+msgstr "Tarehe"
+
+#: .\templates\content_app\liturgy_list.html:22
+msgid "Verse of the day"
+msgstr "Aya ya siku"
+
+#: .\templates\content_app\liturgy_list.html:39
+msgid "No liturgy entries yet."
+msgstr "Bado hakuna liturujia zilizoongezwa."
+
+#: .\templates\content_app\upcoming_event_confirm_delete.html:4
+#: .\templates\content_app\upcoming_event_confirm_delete.html:5
+msgid "Delete upcoming event"
+msgstr "Futa tukio lijalo"
+
+#: .\templates\content_app\upcoming_event_confirm_delete.html:10
+msgid "Delete upcoming event?"
+msgstr "Unataka kufuta tukio lijalo?"
+
+#: .\templates\content_app\upcoming_event_confirm_delete.html:11
+msgid "This will remove it from the landing page."
+msgstr "Hii itaondoa tukio kwenye ukurasa wa mwanzo."
+
+#: .\templates\content_app\upcoming_event_confirm_delete.html:18
+msgid "You do not have permission to delete upcoming events."
+msgstr "Huna ruhusa ya kufuta matukio yajayo."
+
+#: .\templates\content_app\upcoming_event_form.html:4
+#: .\templates\content_app\upcoming_event_form.html:5
+msgid "Upcoming event"
+msgstr "Tukio lijalo"
+
+#: .\templates\content_app\upcoming_event_form.html:30
+msgid "You do not have permission to edit upcoming events."
+msgstr "Huna ruhusa ya kuhariri matukio yajayo."
+
+#: .\templates\content_app\upcoming_events.html:10
+msgid "Landing page events"
+msgstr "Matukio ya ukurasa wa mwanzo"
+
+#: .\templates\content_app\upcoming_events.html:12
+msgid "New upcoming event"
+msgstr "Tukio jipya lijalo"
+
+#: .\templates\content_app\upcoming_events.html:27
+msgid "Date not set"
+msgstr "Tarehe haijawekwa"
+
+#: .\templates\content_app\upcoming_events.html:29
+msgid "Active"
+msgstr "Inatumika"
+
+#: .\templates\content_app\upcoming_events.html:29
+msgid "Hidden"
+msgstr "Imefichwa"
+
+#: .\templates\content_app\upcoming_events.html:40
+msgid "No upcoming events added."
+msgstr "Bado hakuna matukio yajayo yaliyoongezwa."
+
+#: .\templates\fellowships\confirm_delete.html:4
+#: .\templates\fellowships\confirm_delete.html:5
+msgid "Delete fellowship"
+msgstr "Futa ushirika"
+
+#: .\templates\fellowships\confirm_delete.html:10
+#, python-format
+msgid "Delete %(name)s?"
+msgstr "Unataka kufuta %(name)s?"
+
+#: .\templates\fellowships\confirm_delete.html:11
+msgid "This will remove the fellowship group and its memberships."
+msgstr "Hii itaondoa kikundi cha ushirika na uanachama wake."
+
+#: .\templates\fellowships\confirm_delete.html:18
+msgid "You do not have permission to delete fellowship groups."
+msgstr "Huna ruhusa ya kufuta vikundi vya ushirika."
+
+#: .\templates\fellowships\detail.html:5
+msgid "Fellowship details"
+msgstr "Maelezo ya ushirika"
+
+#: .\templates\fellowships\detail.html:17
+msgid "No description."
+msgstr "Hakuna maelezo."
+
+#: .\templates\fellowships\detail.html:18
+#, fuzzy
+#| msgid "Leader"
+msgid "Leader:"
+msgstr "Kiongozi"
+
+#: .\templates\fellowships\detail.html:25 .\templates\fellowships\list.html:14
+#: .\templates\members\list.html:12
+msgid "Add member"
+msgstr "Ongeza muumini"
+
+#: .\templates\fellowships\detail.html:31 .\templates\pledges\list.html:68
+msgid "Member"
+msgstr "Muumini"
+
+#: .\templates\fellowships\detail.html:32 .\templates\fellowships\list.html:25
+msgid "Leader"
+msgstr "Kiongozi"
+
+#: .\templates\fellowships\detail.html:39
+#: .\templates\members\application_approve.html:8
+#: .\templates\members\detail.html:63 .\templates\members\detail.html:76
+#: .\templates\members\detail.html:77 .\templates\members\detail.html:78
+#: .\templates\members\detail.html:91 .\templates\members\detail.html:92
+#: .\templates\members\detail.html:93 .\templates\members\detail.html:111
+#: .\templates\members\detail.html:113 .\templates\members\detail.html:115
+#: .\templates\members\detail.html:126 .\templates\members\detail.html:141
+#: .\templates\members\detail.html:142 .\templates\members\detail.html:143
+#: .\templates\members\detail.html:144 .\templates\members\detail.html:145
+#: .\templates\members\detail.html:146 .\templates\members\me.html:31
+#: .\templates\members\me.html:32 .\templates\members\me.html:33
+msgid "Yes,No"
+msgstr "Ndiyo,Hapana"
+
+#: .\templates\fellowships\detail.html:43
+msgid "No members added yet."
+msgstr "Bado hakuna waumini waliowekwa."
+
+#: .\templates\fellowships\detail.html:52
+msgid "Delete group"
+msgstr "Futa kikundi"
+
+#: .\templates\fellowships\form.html:4 .\templates\fellowships\form.html:5
+#, fuzzy
+#| msgid "Fellowship name"
+msgid "Fellowship form"
+msgstr "Jina la jumuiya"
+
+#: .\templates\fellowships\form.html:27
+#, fuzzy
+#| msgid "You do not have permission to delete fellowship groups."
+msgid "You do not have permission to edit fellowships."
+msgstr "Huna ruhusa ya kufuta vikundi vya ushirika."
+
+#: .\templates\fellowships\list.html:5 .\templates\fellowships\list.html:10
+msgid "Fellowship groups"
+msgstr "Vikundi vya ushirika"
+
+#: .\templates\fellowships\list.html:13
+msgid "Create group"
+msgstr "Unda kikundi"
+
+#: .\templates\fellowships\list.html:24
+msgid "Group"
+msgstr "Kikundi"
+
+#: .\templates\fellowships\list.html:26
+#: .\templates\members\applications_list.html:36
+#: .\templates\members\list.html:35
+msgid "Phone"
+msgstr "Simu"
+
+#: .\templates\fellowships\list.html:36 .\templates\members\list.html:47
+msgid "View"
+msgstr "Tazama"
+
+#: .\templates\fellowships\list.html:40
+msgid "No fellowship groups yet."
+msgstr "Bado hakuna vikundi vya ushirika."
+
+#: .\templates\fellowships\participation_form.html:4
+msgid "Add member to fellowship"
+msgstr "Ongeza muumini kwenye ushirika"
+
+#: .\templates\fellowships\participation_form.html:5
+#: .\templates\members\application_approve.html:88
+msgid "Fellowship participation"
+msgstr "Ushiriki wa ushirika"
+
+#: .\templates\fellowships\participation_form.html:27
+msgid "You do not have permission to edit fellowship participation."
+msgstr "Huna ruhusa ya kuhariri ushiriki wa ushirika."
+
+#: .\templates\home.html:11
+msgid "Church Information"
+msgstr "Muhtasari wa ushirika"
+
+#: .\templates\home.html:12
+msgid "Track members, fellowships, pledges, and announcements in one place."
+msgstr "Fuata waumini, ushirika, ahadi na matangazo sehemu moja."
+
+#: .\templates\home.html:21
+msgid "Active records in this tenant"
+msgstr "Rekodi hai katika tenant hii"
+
+#: .\templates\home.html:26
+#, fuzzy
+#| msgid "Review application"
+msgid "Pending applications"
+msgstr "Kagua ombi"
+
+#: .\templates\home.html:29
+msgid "Fellowship Groups"
+msgstr "Vikundi vya ushirika"
+
+#: .\templates\home.html:31 .\templates\home.html:47
+msgid "Community and ministry groups"
+msgstr "Vikundi vya jamii na huduma"
+
+#: .\templates\home.html:36 .\templates\home.html:52
+msgid "Recorded financial commitments"
+msgstr "Ahadi za kifedha zilizorekodiwa"
+
+#: .\templates\home.html:40
+#, fuzzy
+#| msgid "Your name"
+msgid "My name"
+msgstr "Jina lako"
+
+#: .\templates\home.html:42 .\templates\members\detail.html:5
+msgid "Member profile"
+msgstr "Wasifu wa muumini"
+
+#: .\templates\home.html:45
+#, fuzzy
+#| msgid "My fellowship"
+msgid "My Fellowships"
+msgstr "Ushirika wangu"
+
+#: .\templates\home.html:50
+#, fuzzy
+#| msgid "My pledges"
+msgid "My Pledges"
+msgstr "Ahadi zangu"
+
+#: .\templates\home.html:59
+msgid "Recent announcements"
+msgstr "Matangazo ya karibuni"
+
+#: .\templates\home.html:60
+msgid "View all"
+msgstr "Tazama zote"
+
+#: .\templates\home.html:72
+msgid "No announcements yet."
+msgstr "Bado hakuna matangazo."
+
+#: .\templates\home.html:82
+msgid "View group"
+msgstr "Tazama kikundi"
+
+#: .\templates\home.html:91
+msgid "Leader,Member"
+msgstr "Kiongozi,Mwanachama"
+
+#: .\templates\home.html:94
+msgid "No members listed yet."
+msgstr "Bado hakuna waumini waliotajwa."
+
+#: .\templates\home.html:98
+msgid "Not engaged in fellowship program."
+msgstr "Hajashiriki programu ya ushirika."
+
+#: .\templates\landing.html:9
+msgid "KKKT Salasala DMP | Parish Platform"
+msgstr "KKKT Salasala DMP | Jukwaa la Parokia"
+
+#: .\templates\landing.html:10
+msgid "Join us for worship and community. Everyone is welcome."
+msgstr "Jiunge nasi kwa ibada na ushirika. Karibu nyote."
+
+#: .\templates\landing.html:38 .\templates\public\about.html:36
+#: .\templates\public\contact.html:36 .\templates\public\events.html:36
+#: .\templates\public\ministries.html:36 .\templates\public\partials_nav.html:8
+msgid "Toggle navigation"
+msgstr "Fungua menyu"
+
+#: .\templates\landing.html:45 .\templates\landing.html:208
+#: .\templates\public\about.html:42 .\templates\public\contact.html:42
+#: .\templates\public\events.html:42 .\templates\public\ministries.html:42
+#: .\templates\public\partials_nav.html:13
+msgid "Home"
+msgstr "Nyumbani"
+
+#: .\templates\landing.html:46 .\templates\landing.html:209
+#: .\templates\landing.html:220 .\templates\public\about.html:43
+#: .\templates\public\contact.html:43 .\templates\public\events.html:43
+#: .\templates\public\ministries.html:43
+#: .\templates\public\partials_nav.html:14
+msgid "About"
+msgstr "Kuhusu"
+
+#: .\templates\landing.html:47 .\templates\landing.html:210
+#: .\templates\public\about.html:44 .\templates\public\contact.html:44
+#: .\templates\public\events.html:44 .\templates\public\ministries.html:44
+#: .\templates\public\partials_nav.html:15
+msgid "Events"
+msgstr "Matukio"
+
+#: .\templates\landing.html:48 .\templates\landing.html:211
+#: .\templates\public\about.html:45 .\templates\public\contact.html:45
+#: .\templates\public\events.html:45 .\templates\public\ministries.html:45
+#: .\templates\public\ministries.html:75
+#: .\templates\public\partials_nav.html:16
+msgid "Ministries"
+msgstr "Idara"
+
+#: .\templates\landing.html:49 .\templates\landing.html:215
+#: .\templates\landing.html:237 .\templates\members\application_approve.html:23
+#: .\templates\public\about.html:46 .\templates\public\contact.html:46
+#: .\templates\public\events.html:46 .\templates\public\ministries.html:46
+#: .\templates\public\partials_nav.html:17
+msgid "Contact"
+msgstr "Mawasiliano"
+
+#: .\templates\landing.html:55 .\templates\landing.html:73
+#, fuzzy
+#| msgid "Go to Dashboard"
+msgid "Go to dashboard"
+msgstr "Dashibodi"
+
+#: .\templates\landing.html:57 .\templates\landing.html:75
+#: .\templates\signup.html:8
+msgid "Sign up"
+msgstr "Jisajili"
+
+#: .\templates\landing.html:69
+msgid "Come worship with us!"
+msgstr "Njoo kuabudu pamoja nasi!"
+
+#: .\templates\landing.html:85
+msgid "Welcome to KKKT Salasala DMP!"
+msgstr "Karibu KKKT Salasala DMP!"
+
+#: .\templates\landing.html:86
+msgid "We are a community of Christ followers who:"
+msgstr "Sisi ni jumuiya ya wafuasi wa Kristo ambao:"
+
+#: .\templates\landing.html:88
+msgid "Gather together to celebrate the glory of God;"
+msgstr "Hukusanyika kusherehekea utukufu wa Mungu;"
+
+#: .\templates\landing.html:89
+msgid "Grow together to cultivate the Fruits of the Spirit;"
+msgstr "Hukuzana kukuza Matunda ya Roho;"
+
+#: .\templates\landing.html:90
+msgid "Go together to communicate the Hope of Jesus."
+msgstr "Hutoka pamoja kupeleka Tumaini la Yesu."
+
+#: .\templates\landing.html:92
+msgid "Learn More"
+msgstr "Jifunze zaidi"
+
+#: .\templates\landing.html:102
+msgid "Two ways to participate"
+msgstr "Njia mbili za kushiriki"
+
+#: .\templates\landing.html:103
+msgid "Sunday Worship Gathering 10:50 AM"
+msgstr "Ibada ya Jumapili saa 10:50 asubuhi"
+
+#: .\templates\landing.html:108
+msgid "Join us in person"
+msgstr "Jiunge nasi ana kwa ana"
+
+#: .\templates\landing.html:109
+msgid "We gather every Sunday at 10:50 am for worship. All ages are welcome."
+msgstr ""
+"Hukusanyika kila Jumapili saa 10:50 asubuhi kwa ibada. Karibu watu wa rika "
+"zote."
+
+#: .\templates\landing.html:113
+msgid "Participate online"
+msgstr "Shiriki mtandaoni"
+
+#: .\templates\landing.html:114
+msgid "Can't make it? Join us live on YouTube or Facebook."
+msgstr "Huwezi kufika? Jiunge nasi mubashara kupitia YouTube au Facebook."
+
+#: .\templates\landing.html:124 .\templates\public\events.html:82
+msgid "Upcoming Events"
+msgstr "Matukio yajayo"
+
+#: .\templates\landing.html:125 .\templates\public\events.html:83
+msgid "Mark your calendars for these great events"
+msgstr "Weka tarehe kwa matukio haya muhimu"
+
+#: .\templates\landing.html:147 .\templates\public\events.html:105
+msgid "No upcoming events yet."
+msgstr "Bado hakuna matukio yajayo."
+
+#: .\templates\landing.html:157
+msgid "Field"
+msgstr "Uwanja"
+
+#: .\templates\landing.html:161
+msgid "Latest News"
+msgstr "Habari mpya"
+
+#: .\templates\landing.html:162
+msgid "Recent updates to keep you in the loop."
+msgstr "Taarifa za hivi karibuni kukufahamisha."
+
+#: .\templates\landing.html:165
+msgid "Easter Week Services"
+msgstr "Ibada za Wiki ya Pasaka"
+
+#: .\templates\landing.html:166
+msgid "Mar 11, 2026"
+msgstr "11 Machi 2026"
+
+#: .\templates\landing.html:169
+msgid "Volunteer Opportunity"
+msgstr "Fursa ya kujitolea"
+
+#: .\templates\landing.html:170
+msgid "Sunday Morning Sound Team — Mar 10, 2026"
+msgstr "Timu ya sauti ya Jumapili asubuhi — 10 Machi 2026"
+
+#: .\templates\landing.html:182
+msgid "Sign up for our Newsletter"
+msgstr "Jiandikishe kwa jarida letu"
+
+#: .\templates\landing.html:183
+msgid "Subscribe to receive email updates with the latest news."
+msgstr "Jiandikishe upokee taarifa mpya kwa barua pepe."
+
+#: .\templates\landing.html:188
+msgid "Enter Your Email"
+msgstr "Weka barua pepe yako"
+
+#: .\templates\landing.html:190 .\templates\public\contact.html:101
+msgid "Your email"
+msgstr "Barua pepe yako"
+
+#: .\templates\landing.html:191
+msgid "Subscribe"
+msgstr "Jiandikishe"
+
+#: .\templates\landing.html:204 .\templates\landing.html:229
+#, fuzzy
+#| msgid "About KKKT Salasala DMP"
+msgid "KKKT Salasala DMP"
+msgstr "Kuhusu KKKT Salasala DMP"
+
+#: .\templates\landing.html:212
+msgid "News"
+msgstr "Habari"
+
+#: .\templates\landing.html:213
+msgid "Media"
+msgstr "Vyombo vya habari"
+
+#: .\templates\landing.html:214
+msgid "Give"
+msgstr "Toa"
+
+#: .\templates\landing.html:222
+msgid "Who We Are"
+msgstr "Sisi ni nani"
+
+#: .\templates\landing.html:223
+msgid "Our Staff"
+msgstr "Wahudumu wetu"
+
+#: .\templates\landing.html:224
+msgid "I'm New"
+msgstr "Mimi ni mgeni"
+
+#: .\templates\landing.html:225
+msgid "Our Beliefs"
+msgstr "Imani yetu"
+
+#: .\templates\landing.html:231
+msgid "KKKT East & Coastal Diocese"
+msgstr "Dayosisi ya Mashariki na Pwani"
+
+#: .\templates\landing.html:232
+msgid "Dar es Salaam, Tanzania"
+msgstr "Dar es Salaam, Tanzania"
+
+#: .\templates\landing.html:233
+msgid "View Map"
+msgstr "Tazama ramani"
+
+#: .\templates\landing.html:239 .\templates\members\application_approve.html:24
+#: .\templates\members\detail.html:43 .\templates\members\me.html:24
+#: .\templates\members\me.html:53 .\templates\public\contact.html:81
+msgid "Phone:"
+msgstr "Simu:"
+
+#: .\templates\landing.html:240 .\templates\members\application_approve.html:26
+#: .\templates\members\detail.html:45 .\templates\members\me.html:25
+#: .\templates\members\me.html:54 .\templates\public\contact.html:82
+msgid "Email:"
+msgstr "Barua pepe:"
+
+#: .\templates\landing.html:253 .\templates\public\about.html:130
+#: .\templates\public\contact.html:118 .\templates\public\events.html:156
+#: .\templates\public\ministries.html:134
+msgid "&copy; 2026 KKKT Salasala DMP. All Rights Reserved."
+msgstr "[PENDING TRANSLATION] &copy; 2026 KKKT Salasala DMP. All Rights Reserved..."
+
+#: .\templates\landing.html:253
+msgid "Login"
+msgstr "Ingia"
+
+#: .\templates\login.html:232
+msgid "Welcome back"
+msgstr "Karibu tena"
+
+#: .\templates\login.html:233
+msgid "Welcome and sign in to your account!."
+msgstr "Karibu tena kwenye akaunti yako."
+
+#: .\templates\login.html:241 .\tenants\forms.py:37
+msgid "Phone number or admin username"
+msgstr "[PENDING TRANSLATION] Phone number or admin username..."
+
+#: .\templates\login.html:246
+msgid "Password"
+msgstr "Nenosiri"
+
+#: .\templates\login.html:253 .\templates\login.html:290
+#: .\templates\signup.html:286 .\templates\signup.html:339
+#, fuzzy
+#| msgid "Password"
+msgid "Show password"
+msgstr "Nenosiri"
+
+#: .\templates\login.html:275
+#, fuzzy
+#| msgid "Enter Your Email"
+msgid "Did you forget your password?"
+msgstr "Weka barua pepe yako"
+
+#: .\templates\login.html:275
+msgid "Reset here"
+msgstr "[PENDING TRANSLATION] Reset here..."
+
+#: .\templates\login.html:290 .\templates\signup.html:339
+#, fuzzy
+#| msgid "Password"
+msgid "Hide password"
+msgstr "Nenosiri"
+
+#: .\templates\members\application_approve.html:4
+#: .\templates\members\application_approve.html:5
+msgid "Review application"
+msgstr "Kagua ombi"
+
+#: .\templates\members\application_approve.html:16
+#: .\templates\members\detail.html:20 .\templates\members\form.html:20
+#: .\templates\members\me.html:16
+msgid "Personal information"
+msgstr "Taarifa binafsi"
+
+#: .\templates\members\application_approve.html:17
+#: .\templates\members\detail.html:22 .\templates\members\me.html:18
+msgid "Gender:"
+msgstr "Jinsia:"
+
+#: .\templates\members\application_approve.html:18
+#: .\templates\members\detail.html:23 .\templates\members\me.html:19
+msgid "Date of birth:"
+msgstr "Tarehe ya kuzaliwa:"
+
+#: .\templates\members\application_approve.html:19
+#: .\templates\members\detail.html:24
+msgid "Place of birth:"
+msgstr "Mahali pa kuzaliwa:"
+
+#: .\templates\members\application_approve.html:20
+#: .\templates\members\detail.html:25 .\templates\members\me.html:20
+msgid "Marital status:"
+msgstr "Hali ya ndoa:"
+
+#: .\templates\members\application_approve.html:25
+#: .\templates\members\detail.html:44
+msgid "Spouse phone:"
+msgstr "Simu ya mwenzi:"
+
+#: .\templates\members\application_approve.html:27
+#: .\templates\members\detail.html:46
+msgid "P.O. Box:"
+msgstr "S.L.P:"
+
+#: .\templates\members\application_approve.html:30
+#: .\templates\members\list.html:36
+msgid "Residence"
+msgstr "Makazi"
+
+#: .\templates\members\application_approve.html:31
+#: .\templates\members\detail.html:48 .\templates\members\me.html:26
+msgid "Residence name:"
+msgstr "Jina la makazi:"
+
+#: .\templates\members\application_approve.html:32
+#: .\templates\members\detail.html:49
+msgid "Block number:"
+msgstr "Namba ya block:"
+
+#: .\templates\members\application_approve.html:33
+#: .\templates\members\detail.html:47
+msgid "House number:"
+msgstr "Namba ya nyumba:"
+
+#: .\templates\members\application_approve.html:36
+msgid "Marriage & spouse"
+msgstr "Ndoa na mwenzi"
+
+#: .\templates\members\application_approve.html:37
+#: .\templates\members\detail.html:26
+msgid "Marriage type:"
+msgstr "Aina ya ndoa:"
+
+#: .\templates\members\application_approve.html:38
+msgid "Marriage date:"
+msgstr "Tarehe ya ndoa:"
+
+#: .\templates\members\application_approve.html:39
+msgid "Marriage place:"
+msgstr "Mahali pa ndoa:"
+
+#: .\templates\members\application_approve.html:40
+#: .\templates\members\detail.html:27
+msgid "Spouse name:"
+msgstr "Jina la mwenzi:"
+
+#: .\templates\members\application_approve.html:41
+msgid "Living with spouse name:"
+msgstr "Anaishi na mwenzi (jina):"
+
+#: .\templates\members\application_approve.html:44
+msgid "Dependents"
+msgstr "Wategemezi"
+
+#: .\templates\members\application_approve.html:60
+msgid "Fellowship & parish"
+msgstr "Ushirika na parokia"
+
+#: .\templates\members\application_approve.html:61
+msgid "Fellowship name:"
+msgstr "Jina la ushirika:"
+
+#: .\templates\members\application_approve.html:62
+msgid "Previous parish:"
+msgstr "Parokia ya awali:"
+
+#: .\templates\members\application_approve.html:65
+msgid "Neighbors & elders"
+msgstr "Majirani na wazee"
+
+#: .\templates\members\application_approve.html:66
+msgid "Neighbor name:"
+msgstr "Jina la jirani:"
+
+#: .\templates\members\application_approve.html:67
+#: .\templates\members\detail.html:53
+msgid "Neighbor phone:"
+msgstr "Simu ya jirani:"
+
+#: .\templates\members\application_approve.html:68
+msgid "Elder name:"
+msgstr "Jina la mzee:"
+
+#: .\templates\members\application_approve.html:69
+#: .\templates\members\detail.html:55
+msgid "Elder phone:"
+msgstr "Simu ya mzee:"
+
+#: .\templates\members\application_approve.html:72
+msgid "Education & work"
+msgstr "Elimu na kazi"
+
+#: .\templates\members\application_approve.html:73
+msgid "Education level:"
+msgstr "Kiwango cha elimu:"
+
+#: .\templates\members\application_approve.html:74
+#: .\templates\members\detail.html:62 .\templates\members\detail.html:82
+#: .\templates\members\detail.html:97
+msgid "Profession:"
+msgstr "Taaluma:"
+
+#: .\templates\members\application_approve.html:75
+#: .\templates\members\detail.html:59 .\templates\members\detail.html:83
+#: .\templates\members\detail.html:98
+msgid "Occupation:"
+msgstr "Kazi:"
+
+#: .\templates\members\application_approve.html:76
+#: .\templates\members\detail.html:60 .\templates\members\detail.html:84
+#: .\templates\members\detail.html:99
+msgid "Work place:"
+msgstr "Mahali pa kazi:"
+
+#: .\templates\members\application_approve.html:77
+msgid "Volunteer status:"
+msgstr "Hali ya kujitolea:"
+
+#: .\templates\members\application_approve.html:80
+msgid "Spiritual status"
+msgstr "Hali ya kiroho"
+
+#: .\templates\members\application_approve.html:81
+#: .\templates\members\detail.html:76 .\templates\members\detail.html:91
+#: .\templates\members\detail.html:111 .\templates\members\me.html:31
+msgid "Baptized:"
+msgstr "Amebatizwa:"
+
+#: .\templates\members\application_approve.html:82
+#: .\templates\members\detail.html:112
+msgid "Baptism date:"
+msgstr "Tarehe ya ubatizo:"
+
+#: .\templates\members\application_approve.html:83
+#: .\templates\members\detail.html:77 .\templates\members\detail.html:92
+#: .\templates\members\detail.html:113 .\templates\members\me.html:32
+msgid "Confirmed:"
+msgstr "Ameungama:"
+
+#: .\templates\members\application_approve.html:84
+#: .\templates\members\detail.html:114
+msgid "Confirmation date:"
+msgstr "Tarehe ya kipaimara:"
+
+#: .\templates\members\application_approve.html:85
+#: .\templates\members\detail.html:115 .\templates\members\me.html:33
+msgid "Participates in sacraments:"
+msgstr "Anashiriki sakramenti:"
+
+#: .\templates\members\application_approve.html:89
+#: .\templates\members\detail.html:126
+msgid "Participates in fellowship:"
+msgstr "Anashiriki ushirika:"
+
+#: .\templates\members\application_approve.html:90
+msgid "Fellowship house name:"
+msgstr "Jina la nyumba ya ushirika:"
+
+#: .\templates\members\application_approve.html:91
+msgid "Non-participation reason:"
+msgstr "Sababu ya kutoshiriki:"
+
+#: .\templates\members\application_approve.html:92
+msgid "Chairperson name:"
+msgstr "Jina la mwenyekiti:"
+
+#: .\templates\members\application_approve.html:93
+#: .\templates\members\detail.html:130
+msgid "Chairperson signature:"
+msgstr "Saini ya mwenyekiti:"
+
+#: .\templates\members\application_approve.html:96
+msgid "Service interests"
+msgstr "Nia ya huduma"
+
+#: .\templates\members\application_approve.html:97
+msgid "Join fellowship:"
+msgstr "Jiunge na ushirika:"
+
+#: .\templates\members\application_approve.html:98
+msgid "Join Sunday school:"
+msgstr "Jiunge na Shule ya Jumapili:"
+
+#: .\templates\members\application_approve.html:99
+msgid "Join visiting sick:"
+msgstr "Jiunge na kutembelea wagonjwa:"
+
+#: .\templates\members\application_approve.html:100
+msgid "Join Bible study:"
+msgstr "Jiunge na mafundisho ya Biblia:"
+
+#: .\templates\members\application_approve.html:101
+msgid "Join choir:"
+msgstr "Jiunge na kwaya:"
+
+#: .\templates\members\application_approve.html:102
+msgid "Join union:"
+msgstr "Jiunge na umoja:"
+
+#: .\templates\members\application_approve.html:105
+#: .\templates\members\wizard_step.html:77
+msgid "Membership number details"
+msgstr "Maelezo ya namba ya uanachama"
+
+#: .\templates\members\application_approve.html:106
+msgid "Has previous membership number:"
+msgstr "Ana namba ya uanachama ya awali:"
+
+#: .\templates\members\application_approve.html:107
+msgid "Claimed membership number:"
+msgstr "Namba ya uanachama iliyodaiwa:"
+
+#: .\templates\members\application_approve.html:108
+msgid "Registration date:"
+msgstr "Tarehe ya usajili:"
+
+#: .\templates\members\application_approve.html:109
+msgid "Registered full name:"
+msgstr "Jina kamili la usajili:"
+
+#: .\templates\members\application_approve.html:115
+msgid "Assign or update membership number"
+msgstr "Tenga au sasisha namba ya uanachama"
+
+#: .\templates\members\application_approve.html:128
+msgid "Approve"
+msgstr "Idhinisha"
+
+#: .\templates\members\application_submitted.html:4
+#: .\templates\members\application_submitted.html:5
+#: .\templates\members\me.html:72
+msgid "Application submitted"
+msgstr "Ombi limewasilishwa"
+
+#: .\templates\members\application_submitted.html:9
+msgid "Thank you for your submission"
+msgstr "Asante kwa kuwasilisha"
+
+#: .\templates\members\application_submitted.html:10
+msgid "Your membership application has been sent to the admin for approval."
+msgstr ""
+"Ombi lako la uanachama limetumwa kwa msimamizi kwa ajili ya kuidhinishwa."
+
+#: .\templates\members\application_submitted.html:11
+msgid "Back to dashboard"
+msgstr "Rudi kwenye dashibodi"
+
+#: .\templates\members\application_submitted.html:14
+#: .\templates\members\me.html:65
+msgid "Pending approval"
+msgstr "Inasubiri kuidhinishwa"
+
+#: .\templates\members\application_submitted.html:15
+msgid "We will notify you once your membership number has been assigned."
+msgstr "Tutakujulisha mara tu namba yako ya uanachama itakapotengwa."
+
+#: .\templates\members\applications_list.html:10
+msgid "Registration requests"
+msgstr "Maombi ya usajili"
+
+#: .\templates\members\applications_list.html:15
+#: .\templates\members\applications_list.html:37
+msgid "Status"
+msgstr "Hali"
+
+#: .\templates\members\applications_list.html:35
+#: .\templates\members\list.html:33
+msgid "Name"
+msgstr "Jina"
+
+#: .\templates\members\applications_list.html:38
+msgid "Submitted"
+msgstr "Imewasilishwa"
+
+#: .\templates\members\applications_list.html:50
+msgid "Review"
+msgstr "Kagua"
+
+#: .\templates\members\applications_list.html:55
+#, fuzzy
+#| msgid "Application submitted"
+msgid "No applications found."
+msgstr "Hakuna maombi yaliyopatikana."
+
+#: .\templates\members\confirm_delete.html:4
+#: .\templates\members\confirm_delete.html:5
+#: .\templates\members\detail.html:153
+msgid "Delete member"
+msgstr "Futa muumini"
+
+#: .\templates\members\confirm_delete.html:10
+msgid "Are you sure?"
+msgstr "Una uhakika?"
+
+#: .\templates\members\confirm_delete.html:11
+#, python-format
+msgid "This will permanently delete %(name)s."
+msgstr "Hii itamfuta %(name)s kabisa."
+
+#: .\templates\members\confirm_delete.html:18
+msgid "You do not have permission to delete members."
+msgstr "Huna ruhusa ya kufuta waumini."
+
+#: .\templates\members\detail.html:4
+#, python-format
+msgid "%(name)s - Member"
+msgstr "%(name)s - Muumini"
+
+#: .\templates\members\detail.html:14
+#: .\templates\members\spiritual_progress_form.html:4
+#: .\templates\members\spiritual_progress_form.html:5
+msgid "Spiritual progress"
+msgstr "Maendeleo ya kiroho"
+
+#: .\templates\members\detail.html:21 .\templates\members\me.html:17
+msgid "Membership No:"
+msgstr "Namba ya uanachama:"
+
+#: .\templates\members\detail.html:28
+msgid "Place of marriage:"
+msgstr "Mahali pa ndoa:"
+
+#: .\templates\members\detail.html:29
+msgid "Living with spouse:"
+msgstr "Anaishi na mwenzi:"
+
+#: .\templates\members\detail.html:31 .\templates\members\detail.html:38
+msgid "Dependents:"
+msgstr "Wategemezi:"
+
+#: .\templates\members\detail.html:42 .\templates\members\form.html:128
+msgid "Contacts and residence"
+msgstr "Mawasiliano na makazi"
+
+#: .\templates\members\detail.html:50
+msgid "Former parish:"
+msgstr "Parokia ya zamani:"
+
+#: .\templates\members\detail.html:51 .\templates\members\detail.html:141
+#: .\templates\members\me.html:27
+msgid "Fellowship:"
+msgstr "Ushirika:"
+
+#: .\templates\members\detail.html:52
+msgid "Neighbor:"
+msgstr "Jirani:"
+
+#: .\templates\members\detail.html:54
+msgid "Elder:"
+msgstr "Mzee:"
+
+#: .\templates\members\detail.html:58 .\templates\members\form.html:230
+msgid "Education, profession, and occupation"
+msgstr "Elimu, taaluma na kazi"
+
+#: .\templates\members\detail.html:61
+msgid "Education:"
+msgstr "Elimu:"
+
+#: .\templates\members\detail.html:63
+msgid "Volunteer:"
+msgstr "Mjitolea:"
+
+#: .\templates\members\detail.html:70
+msgid "Spiritual & professional progress"
+msgstr "Maendeleo ya kiroho na taaluma"
+
+#: .\templates\members\detail.html:75 .\templates\members\detail.html:90
+msgid "Faith milestones"
+msgstr "Hatua za imani"
+
+#: .\templates\members\detail.html:78 .\templates\members\detail.html:93
+msgid "Communion:"
+msgstr "Meza ya Bwana:"
+
+#: .\templates\members\detail.html:81 .\templates\members\detail.html:96
+msgid "Skills"
+msgstr "Ujuzi"
+
+#: .\templates\members\detail.html:107 .\templates\members\form.html:276
+#: .\templates\members\me.html:30
+msgid "Spiritual services"
+msgstr "Huduma za kiroho"
+
+#: .\templates\members\detail.html:122 .\templates\members\form.html:322
+msgid "Participation in congregation services"
+msgstr "Ushiriki katika huduma za parokia"
+
+#: .\templates\members\detail.html:127
+msgid "Fellowship house:"
+msgstr "Nyumba ya ushirika:"
+
+#: .\templates\members\detail.html:128
+msgid "If not participating:"
+msgstr "Kama hashiriki:"
+
+#: .\templates\members\detail.html:129
+msgid "Chairperson:"
+msgstr "Mwenyekiti:"
+
+#: .\templates\members\detail.html:137 .\templates\members\form.html:368
+#: .\templates\members\wizard_step.html:14
+msgid "Fellowship and service interest"
+msgstr "Ushirika na nia ya huduma"
+
+#: .\templates\members\detail.html:142
+msgid "Sunday school:"
+msgstr "Shule ya Jumapili:"
+
+#: .\templates\members\detail.html:143
+msgid "Visiting the sick:"
+msgstr "Kutembelea wagonjwa:"
+
+#: .\templates\members\detail.html:144
+msgid "Bible study:"
+msgstr "Mafundisho ya Biblia:"
+
+#: .\templates\members\detail.html:145
+msgid "Choir:"
+msgstr "Kwaya:"
+
+#: .\templates\members\detail.html:146
+msgid "Union:"
+msgstr "Umoja:"
+
+#: .\templates\members\form.html:4 .\templates\members\form.html:5
+msgid "Member form"
+msgstr "Fomu ya muumini"
+
+#: .\templates\members\form.html:15 .\templates\members\form.html:409
+#, fuzzy
+#| msgid "Password"
+msgid "Change login password"
+msgstr "Nenosiri"
+
+#: .\templates\members\form.html:106 .\templates\members\wizard_step.html:133
+msgid "Full name"
+msgstr "Jina kamili"
+
+#: .\templates\members\form.html:107 .\templates\members\wizard_step.html:134
+msgid "Date of birth"
+msgstr "Tarehe ya kuzaliwa"
+
+#: .\templates\members\form.html:108 .\templates\members\wizard_step.html:135
+msgid "Relationship"
+msgstr "Uhusiano"
+
+#: .\templates\members\form.html:115 .\templates\members\wizard_step.html:142
+msgid "Add dependent"
+msgstr "Ongeza mtegemezi"
+
+#: .\templates\members\form.html:123 .\templates\members\form.html:225
+#: .\templates\members\form.html:271 .\templates\members\form.html:317
+#: .\templates\members\form.html:363 .\templates\members\list.html:70
+#: .\templates\members\wizard_step.html:165 .\templates\pledges\list.html:112
+msgid "Next"
+msgstr "Inayofuata"
+
+#: .\templates\members\form.html:224 .\templates\members\form.html:270
+#: .\templates\members\form.html:316 .\templates\members\form.html:362
+#: .\templates\members\form.html:396 .\templates\members\list.html:67
+#: .\templates\members\wizard_step.html:162 .\templates\pledges\list.html:109
+msgid "Previous"
+msgstr "Iliyotangulia"
+
+#: .\templates\members\form.html:410
+msgid "Set a new 6-digit password for this user account."
+msgstr "[PENDING TRANSLATION] Set a new 6-digit password for this user account...."
+
+#: .\templates\members\form.html:415
+msgid "New password (6 digits)"
+msgstr "[PENDING TRANSLATION] New password (6 digits)..."
+
+#: .\templates\members\form.html:419
+#, fuzzy
+#| msgid "Password"
+msgid "Confirm new password"
+msgstr "Nenosiri"
+
+#: .\templates\members\form.html:424 .\templates\password_reset_set.html:58
+#, fuzzy
+#| msgid "Password"
+msgid "Update password"
+msgstr "Nenosiri"
+
+#: .\templates\members\form.html:452
+msgid "You do not have permission to edit members."
+msgstr "Huna ruhusa ya kuhariri waumini."
+
+#: .\templates\members\list.html:10
+msgid "Member directory"
+msgstr "Orodha ya waumini"
+
+#: .\templates\members\list.html:18 .\templates\members\list.html:23
+msgid "Search"
+msgstr "Tafuta"
+
+#: .\templates\members\list.html:19
+msgid "Name or membership number"
+msgstr "Jina au namba ya uanachama"
+
+#: .\templates\members\list.html:34
+msgid "Membership No"
+msgstr "Namba ya uanachama"
+
+#: .\templates\members\list.html:51
+msgid "No members found."
+msgstr "Hakuna waumini waliopatikana."
+
+#: .\templates\members\list.html:63 .\templates\pledges\list.html:105
+#, python-format
+msgid "Page %(page)s of %(total)s"
+msgstr "Ukurasa %(page)s ya %(total)s"
+
+#: .\templates\members\me.html:12
+#, fuzzy
+#| msgid "Add member"
+msgid "Approved member"
+msgstr "Ongeza muumini"
+
+#: .\templates\members\me.html:23
+#, fuzzy
+#| msgid "Contact"
+msgid "Contacts"
+msgstr "Mawasiliano"
+
+#: .\templates\members\me.html:40
+#, fuzzy
+#| msgid "Membership No"
+msgid "Membership status"
+msgstr "Namba ya uanachama"
+
+#: .\templates\members\me.html:44
+#, fuzzy
+#| msgid "Application submitted"
+msgid "Not submitted"
+msgstr "Ombi limewasilishwa"
+
+#: .\templates\members\me.html:51
+#, fuzzy
+#| msgid "Application submitted"
+msgid "Application details"
+msgstr "Ombi limewasilishwa"
+
+#: .\templates\members\me.html:52
+#, fuzzy
+#| msgid "Full name"
+msgid "Full name:"
+msgstr "Jina kamili"
+
+#: .\templates\members\me.html:55
+msgid "Submitted at:"
+msgstr "[PENDING TRANSLATION] Submitted at:..."
+
+#: .\templates\members\me.html:57
+#, fuzzy
+#| msgid "Review application"
+msgid "Reviewed at:"
+msgstr "Kagua ombi"
+
+#: .\templates\members\me.html:60
+#, fuzzy
+#| msgid "Assign membership number"
+msgid "Assigned membership number:"
+msgstr "Tenga namba ya uanachama"
+
+#: .\templates\members\me.html:66
+msgid ""
+"Your application is under review. You will see your full member profile here "
+"once approved."
+msgstr "[PENDING TRANSLATION] ..."
+
+#: .\templates\members\me.html:68
+#, fuzzy
+#| msgid "Application submitted"
+msgid "Application needs update"
+msgstr "Ombi limewasilishwa"
+
+#: .\templates\members\me.html:69
+msgid ""
+"Your application was not approved. Please submit your application again."
+msgstr "[PENDING TRANSLATION] ..."
+
+#: .\templates\members\me.html:70
+msgid "Submit again"
+msgstr "[PENDING TRANSLATION] Submit again..."
+
+#: .\templates\members\me.html:73
+msgid "Your profile will appear here after final approval."
+msgstr "[PENDING TRANSLATION] Your profile will appear here after final approval..."
+
+#: .\templates\members\me.html:78
+msgid "You have not submitted a membership application yet."
+msgstr "[PENDING TRANSLATION] You have not submitted a membership application ye..."
+
+#: .\templates\members\me.html:79
+#, fuzzy
+#| msgid "Review application"
+msgid "Start application"
+msgstr "Kagua ombi"
+
+#: .\templates\members\spiritual_progress_form.html:25
+msgid "Save progress"
+msgstr "Hifadhi maendeleo"
+
+#: .\templates\members\spiritual_progress_form.html:28
+msgid "You do not have permission to edit spiritual progress."
+msgstr "Huna ruhusa ya kuhariri maendeleo ya kiroho."
+
+#: .\templates\members\wizard_step.html:18
+#: .\templates\members\wizard_step.html:22
+#: .\templates\members\wizard_step.html:26
+#: .\templates\members\wizard_step.html:30
+#: .\templates\members\wizard_step.html:34
+#: .\templates\members\wizard_step.html:38
+#: .\templates\members\wizard_step.html:113
+#: .\templates\members\wizard_step.html:127
+#: .\templates\members\wizard_step.html:150
+msgid "Required field"
+msgstr "Sehemu ya lazima"
+
+#: .\templates\members\wizard_step.html:44
+#, fuzzy
+#| msgid "Need details?"
+msgid "Pledge details"
+msgstr "Unahitaji maelezo?"
+
+#: .\templates\password_reset_request.html:8
+#, fuzzy
+#| msgid "Password"
+msgid "Reset password"
+msgstr "Nenosiri"
+
+#: .\templates\password_reset_request.html:30
+#, fuzzy
+#| msgid "Password"
+msgid "Forgot password?"
+msgstr "Nenosiri"
+
+#: .\templates\password_reset_request.html:31
+#, fuzzy
+#| msgid "Sign up to access the parish dashboard."
+msgid "Enter your phone number to receive an OTP code."
+msgstr "Jisajili kupata dashibodi ya parokia."
+
+#: .\templates\password_reset_request.html:51
+msgid "Send code"
+msgstr "[PENDING TRANSLATION] Send code..."
+
+#: .\templates\password_reset_request.html:53
+#: .\templates\password_reset_set.html:60
+msgid "Back to sign in"
+msgstr "[PENDING TRANSLATION] Back to sign in..."
+
+#: .\templates\password_reset_set.html:8
+#, fuzzy
+#| msgid "Password"
+msgid "Set new password"
+msgstr "Nenosiri"
+
+#: .\templates\password_reset_set.html:30
+#, fuzzy
+#| msgid "Password"
+msgid "Set a new password"
+msgstr "Nenosiri"
+
+#: .\templates\password_reset_set.html:31
+msgid "Use a password with at least 6 digits."
+msgstr "[PENDING TRANSLATION] Use a password with at least 6 digits...."
+
+#: .\templates\password_reset_verify.html:8
+#, fuzzy
+#| msgid "Neighbor phone"
+msgid "Verify reset code"
+msgstr "Simu ya jirani"
+
+#: .\templates\password_reset_verify.html:30
+#, fuzzy
+#| msgid "Neighbor phone"
+msgid "Verify OTP code"
+msgstr "Simu ya jirani"
+
+#: .\templates\password_reset_verify.html:31
+#, python-format
+msgid "We sent a 6-digit code to %(phone_number)s."
+msgstr "[PENDING TRANSLATION] We sent a 6-digit code to %(phone_number)s...."
+
+#: .\templates\password_reset_verify.html:51
+#, fuzzy
+#| msgid "Certificate"
+msgid "Verify code"
+msgstr "Cheti"
+
+#: .\templates\password_reset_verify.html:53
+msgid "Back to reset request"
+msgstr "[PENDING TRANSLATION] Back to reset request..."
+
+#: .\templates\pledges\confirm_delete.html:4
+#: .\templates\pledges\confirm_delete.html:5
+msgid "Delete pledge"
+msgstr "Futa ahadi"
+
+#: .\templates\pledges\confirm_delete.html:10
+msgid "Delete pledge?"
+msgstr "Unataka kufuta ahadi?"
+
+#: .\templates\pledges\confirm_delete.html:11
+#, python-format
+msgid "This will remove the pledge for %(name)s."
+msgstr "Hii itaondoa ahadi ya %(name)s."
+
+#: .\templates\pledges\confirm_delete.html:18
+msgid "You do not have permission to delete pledges."
+msgstr "Huna ruhusa ya kufuta ahadi."
+
+#: .\templates\pledges\form.html:4 .\templates\pledges\form.html:5
+msgid "Pledge form"
+msgstr "Fomu ya ahadi"
+
+#: .\templates\pledges\form.html:27
+msgid "You do not have permission to edit pledges."
+msgstr "Huna ruhusa ya kuhariri ahadi."
+
+#: .\templates\pledges\list.html:10
+msgid "Financial pledges"
+msgstr "Ahadi za kifedha"
+
+#: .\templates\pledges\list.html:12
+msgid "Record pledge"
+msgstr "Rekodi ahadi"
+
+#: .\templates\pledges\list.html:18 .\templates\pledges\list.html:69
+msgid "Year"
+msgstr "Mwaka"
+
+#: .\templates\pledges\list.html:22
+msgid "Season"
+msgstr "[PENDING TRANSLATION] Season..."
+
+#: .\templates\pledges\list.html:24
+#, fuzzy
+#| msgid "Full name"
+msgid "Full year"
+msgstr "Jina kamili"
+
+#: .\templates\pledges\list.html:25
+msgid "Jan - Jun (6 months)"
+msgstr "[PENDING TRANSLATION] Jan - Jun (6 months)..."
+
+#: .\templates\pledges\list.html:26
+msgid "Jul - Dec (6 months)"
+msgstr "[PENDING TRANSLATION] Jul - Dec (6 months)..."
+
+#: .\templates\pledges\list.html:30
+#, fuzzy
+#| msgid "Create your account"
+msgid "Search year or amount"
+msgstr "Fungua akaunti yako"
+
+#: .\templates\pledges\list.html:31
+msgid "e.g. 2026 or 150000"
+msgstr "[PENDING TRANSLATION] e.g. 2026 or 150000..."
+
+#: .\templates\pledges\list.html:43
+#, fuzzy
+#| msgid "Active records in this tenant"
+msgid "Records in season"
+msgstr "Rekodi hai katika tenant hii"
+
+#: .\templates\pledges\list.html:45
+msgid "Pledges captured in selected period"
+msgstr "[PENDING TRANSLATION] Pledges captured in selected period..."
+
+#: .\templates\pledges\list.html:48
+#, fuzzy
+#| msgid "Building"
+msgid "Building total"
+msgstr "Ujenzi"
+
+#: .\templates\pledges\list.html:50 .\templates\pledges\list.html:55
+#: .\templates\pledges\list.html:60
+msgid "Selected year/season"
+msgstr "[PENDING TRANSLATION] Selected year/season..."
+
+#: .\templates\pledges\list.html:53
+#, fuzzy
+#| msgid "Stewardship"
+msgid "Stewardship total"
+msgstr "Uwakili"
+
+#: .\templates\pledges\list.html:58
+#, fuzzy
+#| msgid "Other"
+msgid "Other total"
+msgstr "Nyingine"
+
+#: .\templates\pledges\list.html:70
+msgid "Building"
+msgstr "Ujenzi"
+
+#: .\templates\pledges\list.html:71
+msgid "Stewardship"
+msgstr "Uwakili"
+
+#: .\templates\pledges\list.html:72
+msgid "Other"
+msgstr "Nyingine"
+
+#: .\templates\pledges\list.html:93
+msgid "No pledges recorded."
+msgstr "Bado hakuna ahadi zilizorekodiwa."
+
+#: .\templates\public\about.html:8
+msgid "About Us | KKKT Salasala DMP"
+msgstr "Kuhusu sisi | KKKT Salasala DMP"
+
+#: .\templates\public\about.html:9
+msgid "Learn about KKKT Salasala DMP, our mission, and our community."
+msgstr "Jifunze kuhusu KKKT Salasala DMP, dhamira yetu, na jamii yetu."
+
+#: .\templates\public\about.html:57
+msgid "About highlights"
+msgstr "Mambo muhimu kuhusu sisi"
+
+#: .\templates\public\about.html:58
+msgid "About us 1"
+msgstr "Kuhusu sisi 1"
+
+#: .\templates\public\about.html:59
+msgid "About us 2"
+msgstr "Kuhusu sisi 2"
+
+#: .\templates\public\about.html:60
+msgid "About us 3"
+msgstr "Kuhusu sisi 3"
+
+#: .\templates\public\about.html:62 .\templates\public\events.html:63
+#: .\templates\public\ministries.html:64
+msgid "Previous image"
+msgstr "Picha iliyotangulia"
+
+#: .\templates\public\about.html:67 .\templates\public\events.html:68
+#: .\templates\public\ministries.html:69
+msgid "Next image"
+msgstr "Picha inayofuata"
+
+#: .\templates\public\about.html:73
+msgid "About KKKT Salasala DMP"
+msgstr "Kuhusu KKKT Salasala DMP"
+
+#: .\templates\public\about.html:74
+msgid "A parish family rooted in worship, discipleship, and service."
+msgstr "Familia ya parokia iliyojengwa katika ibada, uanafunzi na huduma."
+
+#: .\templates\public\about.html:82
+msgid "Our story"
+msgstr "Historia yetu"
+
+#: .\templates\public\about.html:83
+msgid ""
+"KKKT Salasala DMP exists to nurture faith, strengthen families, and serve "
+"the community. We are committed to Christ-centered worship, spiritual "
+"formation, and mission outreach."
+msgstr ""
+"KKKT Salasala DMP ipo kulea imani, kuimarisha familia, na kutumikia jamii. "
+"Tunajitoa kwa ibada inayomweka Kristo, ujenzi wa kiroho na uinjilisti."
+
+#: .\templates\public\about.html:84
+msgid ""
+"Through fellowships, ministries, and pastoral care, we walk alongside "
+"members of all ages to grow deeper in faith and in service."
+msgstr ""
+"Kupitia ushirika, idara na huduma ya kichungaji, tunatembea pamoja na "
+"waumini wa rika zote kukua katika imani na huduma."
+
+#: .\templates\public\about.html:88
+msgid "Our mission"
+msgstr "Dhamira yetu"
+
+#: .\templates\public\about.html:89
+msgid "To gather, grow, and go with the gospel of Jesus Christ."
+msgstr "Kukusanyika, kukua na kwenda na Injili ya Yesu Kristo."
+
+#: .\templates\public\about.html:92
+msgid "Our values"
+msgstr "Maadili yetu"
+
+#: .\templates\public\about.html:94
+msgid "Worship and prayer"
+msgstr "Ibada na maombi"
+
+#: .\templates\public\about.html:95
+msgid "Discipleship and teaching"
+msgstr "Uanafunzi na mafundisho"
+
+#: .\templates\public\about.html:96
+msgid "Community and care"
+msgstr "Jamii na uangalizi"
+
+#: .\templates\public\about.html:97
+msgid "Service and outreach"
+msgstr "Huduma na uinjilisti"
+
+#: .\templates\public\about.html:110
+msgid "Worship"
+msgstr "Ibada"
+
+#: .\templates\public\about.html:111
+msgid "Sunday services, prayer gatherings, and seasonal celebrations."
+msgstr "Ibada za Jumapili, mikutano ya maombi na sherehe za msimu."
+
+#: .\templates\public\about.html:115
+msgid "Care"
+msgstr "Uangalizi"
+
+#: .\templates\public\about.html:116
+msgid "Pastoral care, counseling, and visitation for members."
+msgstr "Huduma ya kichungaji, ushauri na utembeleaji wa waumini."
+
+#: .\templates\public\about.html:120
+msgid "Growth"
+msgstr "Ukuaji"
+
+#: .\templates\public\about.html:121
+msgid "Bible study groups, catechism, and leadership training."
+msgstr "Vikundi vya Biblia, katekisimu na mafunzo ya uongozi."
+
+#: .\templates\public\contact.html:8
+msgid "Contact Us | KKKT Salasala DMP"
+msgstr "Wasiliana nasi | KKKT Salasala DMP"
+
+#: .\templates\public\contact.html:9
+msgid "Contact KKKT Salasala DMP for worship times, directions, and support."
+msgstr ""
+"Wasiliana na KKKT Salasala DMP kwa ratiba za ibada, maelekezo na msaada."
+
+#: .\templates\public\contact.html:61 .\templates\public\events.html:146
+#: .\templates\public\ministries.html:127
+msgid "Contact us"
+msgstr "Wasiliana nasi"
+
+#: .\templates\public\contact.html:78
+msgid "Visit the parish"
+msgstr "Tembelea parokia"
+
+#: .\templates\public\contact.html:79
+msgid "KKKT East & Coastal Diocese, Dar es Salaam, Tanzania."
+msgstr "Dayosisi ya Mashariki na Pwani, Dar es Salaam, Tanzania."
+
+#: .\templates\public\contact.html:83
+msgid "Office Hours:"
+msgstr "Saa za Ofisi:"
+
+#: .\templates\public\contact.html:83
+msgid "Mon - Fri, 9:00 AM - 5:00 PM"
+msgstr "Jumatatu - Ijumaa, 9:00 asubuhi - 5:00 jioni"
+
+#: .\templates\public\contact.html:86
+msgid "Service times"
+msgstr "Ratiba za ibada"
+
+#: .\templates\public\contact.html:87
+msgid "Sunday Worship: 10:50 AM"
+msgstr "Ibada ya Jumapili: 10:50 asubuhi"
+
+#: .\templates\public\contact.html:88
+msgid "Midweek Prayer: Wednesday 6:30 PM"
+msgstr "Maombi ya katikati ya wiki: Jumatano 6:30 jioni"
+
+#: .\templates\public\contact.html:93
+msgid "Send a message"
+msgstr "Tuma ujumbe"
+
+#: .\templates\public\contact.html:96
+msgid "Full Name"
+msgstr "Jina kamili"
+
+#: .\templates\public\contact.html:97
+msgid "Your name"
+msgstr "Jina lako"
+
+#: .\templates\public\contact.html:100
+msgid "Email"
+msgstr "Barua pepe"
+
+#: .\templates\public\contact.html:104
+msgid "Message"
+msgstr "Ujumbe"
+
+#: .\templates\public\contact.html:105
+msgid "How can we help?"
+msgstr "Tunawezaje kusaidia?"
+
+#: .\templates\public\contact.html:107
+msgid "Send message"
+msgstr "Tuma ujumbe"
+
+#: .\templates\public\events.html:8
+msgid "Events | KKKT Salasala DMP"
+msgstr "Matukio | KKKT Salasala DMP"
+
+#: .\templates\public\events.html:9
+msgid "Upcoming events and church calendar for KKKT Salasala DMP."
+msgstr "Matukio yajayo na kalenda ya kanisa kwa KKKT Salasala DMP."
+
+#: .\templates\public\events.html:57
+msgid "Event highlights"
+msgstr "Mambo muhimu ya matukio"
+
+#: .\templates\public\events.html:58
+msgid "Event 1"
+msgstr "Tukio 1"
+
+#: .\templates\public\events.html:59
+msgid "Event 2"
+msgstr "Tukio 2"
+
+#: .\templates\public\events.html:60
+msgid "Event 3"
+msgstr "Tukio 3"
+
+#: .\templates\public\events.html:61
+msgid "Event 4"
+msgstr "Tukio 4"
+
+#: .\templates\public\events.html:74
+msgid "Events & Calendar"
+msgstr "Matukio na Kalenda"
+
+#: .\templates\public\events.html:75
+msgid "Join us for worship, training, and fellowship gatherings."
+msgstr "Jiunge nasi kwa ibada, mafunzo na mikutano ya ushirika."
+
+#: .\templates\public\events.html:116
+msgid "Upcoming highlights"
+msgstr "Vipaumbele vijavyo"
+
+#: .\templates\public\events.html:118
+msgid "Sunday Worship Service"
+msgstr "Ibada ya Jumapili"
+
+#: .\templates\public\events.html:119
+msgid "Every Sunday • 10:50 AM"
+msgstr "Kila Jumapili • 10:50 asubuhi"
+
+#: .\templates\public\events.html:120
+msgid "Main Sanctuary"
+msgstr "Ukumbi Mkuu"
+
+#: .\templates\public\events.html:123
+msgid "Midweek Prayer & Bible Study"
+msgstr "Maombi ya katikati ya wiki na mafundisho ya Biblia"
+
+#: .\templates\public\events.html:124
+msgid "Wednesday • 6:30 PM"
+msgstr "Jumatano • 6:30 jioni"
+
+#: .\templates\public\events.html:125
+msgid "Fellowship Hall"
+msgstr "Ukumbi wa Ushirika"
+
+#: .\templates\public\events.html:128
+msgid "Youth Fellowship Night"
+msgstr "Usiku wa Ushirika wa Vijana"
+
+#: .\templates\public\events.html:129
+msgid "Friday • 7:00 PM"
+msgstr "Ijumaa • 7:00 jioni"
+
+#: .\templates\public\events.html:130
+msgid "Youth Center"
+msgstr "Kituo cha Vijana"
+
+#: .\templates\public\events.html:135
+msgid "Monthly calendar"
+msgstr "Kalenda ya mwezi"
+
+#: .\templates\public\events.html:137
+msgid "Week 1: New members class"
+msgstr "Wiki ya 1: Darasa la waumini wapya"
+
+#: .\templates\public\events.html:138
+msgid "Week 2: Choir rehearsal"
+msgstr "Wiki ya 2: Mazoezi ya kwaya"
+
+#: .\templates\public\events.html:139
+msgid "Week 3: Evangelism outreach"
+msgstr "Wiki ya 3: Uinjilisti"
+
+#: .\templates\public\events.html:140
+msgid "Week 4: Congregation fellowship"
+msgstr "Wiki ya 4: Ushirika wa waumini"
+
+#: .\templates\public\events.html:144
+msgid "Need details?"
+msgstr "Unahitaji maelezo?"
+
+#: .\templates\public\events.html:145
+msgid "Contact the church office for the full events calendar."
+msgstr "Wasiliana na ofisi ya kanisa kupata kalenda kamili ya matukio."
+
+#: .\templates\public\ministries.html:8
+msgid "Ministries | KKKT Salasala DMP"
+msgstr "Idara | KKKT Salasala DMP"
+
+#: .\templates\public\ministries.html:9
+msgid "Explore ministries and service opportunities at KKKT Salasala DMP."
+msgstr "Gundua idara na fursa za huduma katika KKKT Salasala DMP."
+
+#: .\templates\public\ministries.html:57
+msgid "Ministry highlights"
+msgstr "Mambo muhimu ya idara"
+
+#: .\templates\public\ministries.html:58
+msgid "Ministry 1"
+msgstr "Idara 1"
+
+#: .\templates\public\ministries.html:59
+msgid "Ministry 2"
+msgstr "Idara 2"
+
+#: .\templates\public\ministries.html:60
+msgid "Ministry 3"
+msgstr "Idara 3"
+
+#: .\templates\public\ministries.html:61
+msgid "Ministry 4"
+msgstr "Idara 4"
+
+#: .\templates\public\ministries.html:62
+msgid "Ministry 5"
+msgstr "Idara 5"
+
+#: .\templates\public\ministries.html:76
+msgid "Serve, grow, and connect through church ministries."
+msgstr "Tumikia, kukua na kuungana kupitia idara za kanisa."
+
+#: .\templates\public\ministries.html:85
+msgid "Choir & Worship"
+msgstr "Kwaya na Ibada"
+
+#: .\templates\public\ministries.html:86
+msgid "Join evangelist, trumpets, youth, or women choirs and lead in worship."
+msgstr ""
+"Jiunge na kwaya ya uinjilisti, tarumbeta, vijana au wanawake na uongoze "
+"ibada."
+
+#: .\templates\public\ministries.html:91
+msgid "Youth & Sunday School"
+msgstr "Vijana na Shule ya Jumapili"
+
+#: .\templates\public\ministries.html:92
+msgid ""
+"Build faith foundations for children and youth through teaching and "
+"mentoring."
+msgstr ""
+"Jenga msingi wa imani kwa watoto na vijana kupitia mafundisho na ulezi."
+
+#: .\templates\public\ministries.html:97
+msgid "Care & Visitation"
+msgstr "Uangalizi na Utembeleaji"
+
+#: .\templates\public\ministries.html:98
+msgid "Support the sick, elderly, and vulnerable through visits and prayer."
+msgstr "Wasaidie wagonjwa, wazee na wenye uhitaji kwa utembeleaji na maombi."
+
+#: .\templates\public\ministries.html:103
+msgid "Bible Study"
+msgstr "Mafundisho ya Biblia"
+
+#: .\templates\public\ministries.html:104
+msgid "Grow in scripture through small groups and teaching sessions."
+msgstr "Kua katika neno kupitia vikundi vidogo na vipindi vya mafundisho."
+
+#: .\templates\public\ministries.html:110
+msgid "Connect with local fellowship houses for encouragement and prayer."
+msgstr "Ungana na nyumba za ushirika za karibu kwa kutiana moyo na maombi."
+
+#: .\templates\public\ministries.html:115
+msgid "Women & Youth Union"
+msgstr "Umoja wa Wanawake na Vijana"
+
+#: .\templates\public\ministries.html:116
+msgid "Serve in women or youth unions through outreach and discipleship."
+msgstr ""
+"Tumikia katika umoja wa wanawake au vijana kupitia uinjilisti na uanafunzi."
+
+#: .\templates\public\ministries.html:125
+msgid "Ready to serve?"
+msgstr "Uko tayari kuhudumu?"
+
+#: .\templates\public\ministries.html:126
+msgid "Contact the ministry coordinators to join a team."
+msgstr "Wasiliana na waratibu wa idara kujiunga na timu."
+
+#: .\templates\signup.html:254
+msgid "Create your account"
+msgstr "Fungua akaunti yako"
+
+#: .\templates\signup.html:255
+#, fuzzy
+#| msgid "Sign up to access the parish dashboard."
+msgid "Sign up with your phone number to access the parish dashboard."
+msgstr "Jisajili kupata dashibodi ya parokia."
+
+#: .\templates\signup.html:309
+msgid "Create account"
+msgstr "Fungua akaunti"
+
+#: .\templates\signup.html:311
+msgid "Already have an account?"
+msgstr "Tayari una akaunti?"
+
+#: .\templates\signup_verify.html:8 .\templates\signup_verify.html:125
+msgid "Verify"
+msgstr "[PENDING TRANSLATION] Verify..."
+
+#: .\templates\signup_verify.html:102
+#, fuzzy
+#| msgid "Neighbor phone"
+msgid "Verify your phone"
+msgstr "Simu ya jirani"
+
+#: .\templates\signup_verify.html:103
+#, python-format
+msgid ""
+"We sent a 6-digit code to %(phone_number)s. Enter it below to complete "
+"signup."
+msgstr "[PENDING TRANSLATION] ..."
+
+#: .\templates\signup_verify.html:119 .\tenants\forms.py:212
+#, fuzzy
+#| msgid "Certificate"
+msgid "Verification code"
+msgstr "Cheti"
+
+#: .\templates\signup_verify.html:128
+msgid "Back to signup"
+msgstr "[PENDING TRANSLATION] Back to signup..."
+
+#: .\templates\tenants\create.html:4 .\templates\tenants\create.html:5
+msgid "Create Tenant"
+msgstr "Unda tenant"
+
+#: .\templates\tenants\create.html:23
+msgid "Create tenant"
+msgstr "Unda tenant"
+
+#: .\tenants\forms.py:50
+msgid "Enter your phone number or admin username."
+msgstr "[PENDING TRANSLATION] Enter your phone number or admin username...."
+
+#: .\tenants\forms.py:52
+#, fuzzy
+#| msgid "Enter Your Email"
+msgid "Enter your password."
+msgstr "Weka barua pepe yako"
+
+#: .\tenants\forms.py:59 .\tenants\forms.py:110
+#, fuzzy
+#| msgid "Enter Phone Number"
+msgid "Enter a valid phone number."
+msgstr "Ingiza namba ya simu"
+
+#: .\tenants\forms.py:73 .\tenants\forms.py:115
+#, fuzzy
+#| msgid ""
+#| "A member with this membership number already exists. Please enter a "
+#| "different number."
+msgid "No account found with this phone number."
+msgstr ""
+"Muumini wenye namba hii ya uanachama ipo tayari. Tafadhali weka namba "
+"tofauti."
+
+#: .\tenants\forms.py:74
+msgid "No account found with this username."
+msgstr "[PENDING TRANSLATION] No account found with this username...."
+
+#: .\tenants\forms.py:77
+msgid "Incorrect password for this phone number."
+msgstr "[PENDING TRANSLATION] Incorrect password for this phone number...."
+
+#: .\tenants\forms.py:78
+msgid "Incorrect password for this username."
+msgstr "[PENDING TRANSLATION] Incorrect password for this username...."
+
+#: .\tenants\forms.py:82
+msgid "Unable to sign in with these credentials."
+msgstr "[PENDING TRANSLATION] Unable to sign in with these credentials...."
+
+#: .\tenants\forms.py:89
+msgid "Your account is not active yet. Please verify your phone number."
+msgstr "[PENDING TRANSLATION] Your account is not active yet. Please verify your..."
+
+#: .\tenants\forms.py:95 .\tenants\forms.py:166
+#, fuzzy
+#| msgid "House number"
+msgid "Phone number"
+msgstr "Namba ya nyumba"
+
+#: .\tenants\forms.py:117
+msgid "This account is not active. Complete verification first."
+msgstr "[PENDING TRANSLATION] This account is not active. Complete verification ..."
+
+#: .\tenants\forms.py:123
+msgid "New password (minimum 6 digits)"
+msgstr "[PENDING TRANSLATION] New password (minimum 6 digits)..."
+
+#: .\tenants\forms.py:127
+msgid "Confirm new password (minimum 6 digits)"
+msgstr "[PENDING TRANSLATION] Confirm new password (minimum 6 digits)..."
+
+#: .\tenants\forms.py:134
+msgid "Password must be at least 6 digits long."
+msgstr "[PENDING TRANSLATION] Password must be at least 6 digits long...."
+
+#: .\tenants\forms.py:136
+msgid "Password must contain digits only."
+msgstr "[PENDING TRANSLATION] Password must contain digits only...."
+
+#: .\tenants\forms.py:144
+msgid "Passwords do not match."
+msgstr "[PENDING TRANSLATION] Passwords do not match...."
+
+#: .\tenants\forms.py:168
+msgid "Password (minimum 6 digits)"
+msgstr "[PENDING TRANSLATION] Password (minimum 6 digits)..."
+
+#: .\tenants\forms.py:170
+msgid "Confirm password (minimum 6 digits)"
+msgstr "[PENDING TRANSLATION] Confirm password (minimum 6 digits)..."
+
+#: .\tenants\forms.py:188
+msgid "Enter 9 digits (e.g. 621437851) or 10 digits starting with 0."
+msgstr "[PENDING TRANSLATION] Enter 9 digits (e.g. 621437851) or 10 digits start..."
+
+#: .\tenants\forms.py:193
+#, fuzzy
+#| msgid ""
+#| "A member with this membership number already exists. Please enter a "
+#| "different number."
+msgid "A user with this phone number already exists."
+msgstr ""
+"Muumini wenye namba hii ya uanachama ipo tayari. Tafadhali weka namba "
+"tofauti."
+
+#: .\tenants\forms.py:200
+msgid "Password must be at least 6 characters long."
+msgstr "[PENDING TRANSLATION] Password must be at least 6 characters long...."
+
+#: .\tenants\views.py:111 .\tenants\views.py:212
+msgid "Failed to request verification code."
+msgstr "[PENDING TRANSLATION] Failed to request verification code...."
+
+#: .\tenants\views.py:116 .\tenants\views.py:218
+msgid "Verification code sent via SMS."
+msgstr "[PENDING TRANSLATION] Verification code sent via SMS...."
+
+#: .\tenants\views.py:147 .\tenants\views.py:162
+msgid "Please start signup to receive a verification code."
+msgstr "[PENDING TRANSLATION] Please start signup to receive a verification code..."
+
+#: .\tenants\views.py:167
+msgid "Signup session expired. Please sign up again."
+msgstr "[PENDING TRANSLATION] Signup session expired. Please sign up again...."
+
+#: .\tenants\views.py:172 .\tenants\views.py:272
+msgid "Invalid verification code."
+msgstr "[PENDING TRANSLATION] Invalid verification code...."
+
+#: .\tenants\views.py:182
+msgid "Phone verified. Your account is now active."
+msgstr "[PENDING TRANSLATION] Phone verified. Your account is now active...."
+
+#: .\tenants\views.py:206
+msgid "No verified account found with this phone number."
+msgstr "[PENDING TRANSLATION] No verified account found with this phone number...."
+
+#: .\tenants\views.py:248 .\tenants\views.py:262
+msgid "Please start password reset first."
+msgstr "[PENDING TRANSLATION] Please start password reset first...."
+
+#: .\tenants\views.py:267 .\tenants\views.py:317
+msgid "Password reset session expired. Please try again."
+msgstr "[PENDING TRANSLATION] Password reset session expired. Please try again...."
+
+#: .\tenants\views.py:300 .\tenants\views.py:312
+msgid "Please verify OTP before setting a new password."
+msgstr "[PENDING TRANSLATION] Please verify OTP before setting a new password...."
+
+#: .\tenants\views.py:325
+msgid "Password updated successfully. Please sign in."
+msgstr "[PENDING TRANSLATION] Password updated successfully. Please sign in...."
+
+#~ msgid "Enter phone number"
+#~ msgstr "Ingiza namba ya simu"
+
+#~ msgid "Need help?"
+#~ msgstr "Unahitaji msaada?"
+
+#~ msgid "Contact support"
+#~ msgstr "Wasiliana na msaada"
+
+#~ msgid "Assign membership number"
+#~ msgstr "Tenga namba ya uanachama"
+
+#~ msgid "Baptism date"
+#~ msgstr "Tarehe ya ubatizo"
+
+#~ msgid "Block number"
+#~ msgstr "Namba ya block"
+
+#~ msgid "Confirmation date"
+#~ msgstr "Tarehe ya kipaimara"
+
+#~ msgid "Elder name"
+#~ msgstr "Jina la mzee wa kanisa"
+
+#~ msgid "Elder phone"
+#~ msgstr "Simu ya mzee wa kanisa"
+
+#~ msgid "Fellowship chairperson name"
+#~ msgstr "Jina la mwenyekiti wa jumuiya"
+
+#~ msgid "Fellowship chairperson signature"
+#~ msgstr "Sahihi ya mwenyekiti wa jumuiya"
+
+#~ msgid "Fellowship house name"
+#~ msgstr "Jina la nyumba ya jumuiya"
+
+#~ msgid "Fellowship non participation reason"
+#~ msgstr "Sababu ya kutoshiriki jumuiya"
+
+#~ msgid "Is baptized"
+#~ msgstr "Amebatizwa"
+
+#~ msgid "Is confirmed"
+#~ msgstr "Amepewa kipaimara"
+
+#~ msgid "Join bible study"
+#~ msgstr "Jiunge na mafundisho ya Biblia"
+
+#~ msgid "Join choir"
+#~ msgstr "Jiunge na kwaya"
+
+#~ msgid "Join fellowship"
+#~ msgstr "Jiunge na jumuiya"
+
+#~ msgid "Join sunday school"
+#~ msgstr "Jiunge na shule ya Jumapili"
+
+#~ msgid "Join union"
+#~ msgstr "Jiunge na umoja"
+
+#~ msgid "Join visiting sick"
+#~ msgstr "Jiunge na huduma ya kuwatembelea wagonjwa"
+
+#~ msgid "Living with spouse name"
+#~ msgstr "Jina la mwenzi unayeishi naye"
+
+#~ msgid "Marriage place"
+#~ msgstr "Mahali pa ndoa"
+
+#~ msgid "Neighbor name"
+#~ msgstr "Jina la jirani"
+
+#~ msgid "Occupation"
+#~ msgstr "Kazi"
+
+#~ msgid "Participates in fellowship"
+#~ msgstr "Anashiriki jumuiya"
+
+#~ msgid "Participates in sacraments"
+#~ msgstr "Anashiriki sakramenti"
+
+#~ msgid "Place of birth"
+#~ msgstr "Mahali alipozaliwa"
+
+#~ msgid "Po box"
+#~ msgstr "S.L.P"
+
+#~ msgid "Previous parish"
+#~ msgstr "Usharika uliotoka"
+
+#~ msgid "Primary phone"
+#~ msgstr "Simu ya msingi"
+
+#~ msgid "Profession"
+#~ msgstr "Taaluma"
+
+#~ msgid "Residence name"
+#~ msgstr "Jina la makazi"
+
+#~ msgid "Spouse name"
+#~ msgstr "Jina la mwenzi"
+
+#~ msgid "Spouse phone"
+#~ msgstr "Simu ya mwenzi"
+
+#~ msgid "Work place"
+#~ msgstr "Mahali pa kazi"
+
+#~ msgid "Education level"
+#~ msgstr "Kiwango cha elimu"
+
+#~ msgid "Gender"
+#~ msgstr "Jinsia"
+
+#~ msgid "Marital status"
+#~ msgstr "Hali ya ndoa"
+
+#~ msgid "Marriage date"
+#~ msgstr "Tarehe ya ndoa"
+
+#~ msgid "Marriage type"
+#~ msgstr "Aina ya ndoa"
+
+#~ msgid "Volunteer status"
+#~ msgstr "Hali ya kujitolea"

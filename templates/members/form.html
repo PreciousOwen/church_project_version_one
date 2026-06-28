@@ -1,0 +1,455 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ title|default:_('Member form') }}{% endblock %}
+{% block header %}{{ title|default:_('Member form') }}{% endblock %}
+
+{% block content %}
+<section class="card">
+    {% if user.is_superuser or user.id == 1 %}
+        <form method="post" class="form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {% if can_change_login_password %}
+                <div class="step-actions" style="justify-content: flex-end; margin-bottom: 1rem;">
+                    <button class="btn ghost" type="button" data-open-password-modal>{% trans "Change login password" %}</button>
+                </div>
+            {% endif %}
+            <div class="form-stepper" data-stepper>
+                <div class="form-step" data-step="1">
+                    <h3>{% trans "Personal information" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.membership_no.label }}</span>
+                            {{ form.membership_no }}
+                            {% if form.membership_no.errors %}
+                                <small class="muted">{{ form.membership_no.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.full_name.label }}</span>
+                            {{ form.full_name }}
+                            {% if form.full_name.errors %}
+                                <small class="muted">{{ form.full_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.gender.label }}</span>
+                            {{ form.gender }}
+                            {% if form.gender.errors %}
+                                <small class="muted">{{ form.gender.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.dob.label }}</span>
+                            {{ form.dob }}
+                            {% if form.dob.errors %}
+                                <small class="muted">{{ form.dob.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.place_of_birth.label }}</span>
+                            {{ form.place_of_birth }}
+                            {% if form.place_of_birth.errors %}
+                                <small class="muted">{{ form.place_of_birth.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.marital_status.label }}</span>
+                            {{ form.marital_status }}
+                            {% if form.marital_status.errors %}
+                                <small class="muted">{{ form.marital_status.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.marriage_type.label }}</span>
+                            {{ form.marriage_type }}
+                            {% if form.marriage_type.errors %}
+                                <small class="muted">{{ form.marriage_type.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.marriage_date.label }}</span>
+                            {{ form.marriage_date }}
+                            {% if form.marriage_date.errors %}
+                                <small class="muted">{{ form.marriage_date.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.marriage_place.label }}</span>
+                            {{ form.marriage_place }}
+                            {% if form.marriage_place.errors %}
+                                <small class="muted">{{ form.marriage_place.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.spouse_name.label }}</span>
+                            {{ form.spouse_name }}
+                            {% if form.spouse_name.errors %}
+                                <small class="muted">{{ form.spouse_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.living_with_spouse_name.label }}</span>
+                            {{ form.living_with_spouse_name }}
+                            {% if form.living_with_spouse_name.errors %}
+                                <small class="muted">{{ form.living_with_spouse_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label class="dependents-field">
+                            <span>{{ form.dependents.label }}</span>
+                            <input type="hidden" name="{{ form.dependents.name }}" id="{{ form.dependents.id_for_label }}" value="{{ form.dependents.value|default:'[]' }}">
+                            <div class="dependents-table">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                                <th>{% trans "Full name" %}</th>
+                                                <th>{% trans "Date of birth" %}</th>
+                                                <th>{% trans "Relationship" %}</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="dependents-list"></tbody>
+                                </table>
+                            </div>
+                            <button class="btn ghost dependents-add" type="button">{% trans "Add dependent" %}</button>
+                            {% if form.dependents.errors %}
+                                <small class="muted">{{ form.dependents.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                    <div class="step-actions">&nbsp;</div>
+                    <!-- <div class="step-actions">
+                        <button class="btn" type="button" data-next>{% trans "Next" %}</button>
+                    </div> -->
+                </div>
+
+                <div class="form-step" data-step="2" hidden>
+                    <h3>{% trans "Contacts and residence" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.primary_phone.label }}</span>
+                            {{ form.primary_phone }}
+                            {% if form.primary_phone.errors %}
+                                <small class="muted">{{ form.primary_phone.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.spouse_phone.label }}</span>
+                            {{ form.spouse_phone }}
+                            {% if form.spouse_phone.errors %}
+                                <small class="muted">{{ form.spouse_phone.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.email.label }}</span>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <small class="muted">{{ form.email.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.po_box.label }}</span>
+                            {{ form.po_box }}
+                            {% if form.po_box.errors %}
+                                <small class="muted">{{ form.po_box.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.house_number.label }}</span>
+                            {{ form.house_number }}
+                            {% if form.house_number.errors %}
+                                <small class="muted">{{ form.house_number.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.residence_name.label }}</span>
+                            {{ form.residence_name }}
+                            {% if form.residence_name.errors %}
+                                <small class="muted">{{ form.residence_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.block_number.label }}</span>
+                            {{ form.block_number }}
+                            {% if form.block_number.errors %}
+                                <small class="muted">{{ form.block_number.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.previous_parish.label }}</span>
+                            {{ form.previous_parish }}
+                            {% if form.previous_parish.errors %}
+                                <small class="muted">{{ form.previous_parish.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.fellowship_name.label }}</span>
+                            {{ form.fellowship_name }}
+                            {% if form.fellowship_name.errors %}
+                                <small class="muted">{{ form.fellowship_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.neighbor_name.label }}</span>
+                            {{ form.neighbor_name }}
+                            {% if form.neighbor_name.errors %}
+                                <small class="muted">{{ form.neighbor_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.neighbor_phone.label }}</span>
+                            {{ form.neighbor_phone }}
+                            {% if form.neighbor_phone.errors %}
+                                <small class="muted">{{ form.neighbor_phone.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.elder_name.label }}</span>
+                            {{ form.elder_name }}
+                            {% if form.elder_name.errors %}
+                                <small class="muted">{{ form.elder_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.elder_phone.label }}</span>
+                            {{ form.elder_phone }}
+                            {% if form.elder_phone.errors %}
+                                <small class="muted">{{ form.elder_phone.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                    <div class="step-actions">&nbsp;</div>
+                    <!-- <div class="step-actions">
+                        <button class="btn ghost" type="button" data-prev>{% trans "Previous" %}</button>
+                        <button class="btn" type="button" data-next>{% trans "Next" %}</button>
+                    </div> -->
+                </div>
+
+                <div class="form-step" data-step="3" hidden>
+                    <h3>{% trans "Education, profession, and occupation" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.occupation.label }}</span>
+                            {{ form.occupation }}
+                            {% if form.occupation.errors %}
+                                <small class="muted">{{ form.occupation.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.work_place.label }}</span>
+                            {{ form.work_place }}
+                            {% if form.work_place.errors %}
+                                <small class="muted">{{ form.work_place.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.education_level.label }}</span>
+                            {{ form.education_level }}
+                            {% if form.education_level.errors %}
+                                <small class="muted">{{ form.education_level.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.profession.label }}</span>
+                            {{ form.profession }}
+                            {% if form.profession.errors %}
+                                <small class="muted">{{ form.profession.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.volunteer_status.label }}</span>
+                            {{ form.volunteer_status }}
+                            {% if form.volunteer_status.errors %}
+                                <small class="muted">{{ form.volunteer_status.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                    <div class="step-actions">&nbsp;</div>
+                    <!-- <div class="step-actions">
+                        <button class="btn ghost" type="button" data-prev>{% trans "Previous" %}</button>
+                        <button class="btn" type="button" data-next>{% trans "Next" %}</button>
+                    </div> -->
+                </div>
+
+                <div class="form-step" data-step="4" hidden>
+                    <h3>{% trans "Spiritual services" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.is_baptized.label }}</span>
+                            {{ form.is_baptized }}
+                            {% if form.is_baptized.errors %}
+                                <small class="muted">{{ form.is_baptized.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.baptism_date.label }}</span>
+                            {{ form.baptism_date }}
+                            {% if form.baptism_date.errors %}
+                                <small class="muted">{{ form.baptism_date.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.is_confirmed.label }}</span>
+                            {{ form.is_confirmed }}
+                            {% if form.is_confirmed.errors %}
+                                <small class="muted">{{ form.is_confirmed.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.confirmation_date.label }}</span>
+                            {{ form.confirmation_date }}
+                            {% if form.confirmation_date.errors %}
+                                <small class="muted">{{ form.confirmation_date.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.participates_in_sacraments.label }}</span>
+                            {{ form.participates_in_sacraments }}
+                            {% if form.participates_in_sacraments.errors %}
+                                <small class="muted">{{ form.participates_in_sacraments.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                    <div class="step-actions">&nbsp;</div>
+                    <!-- <div class="step-actions">
+                        <button class="btn ghost" type="button" data-prev>{% trans "Previous" %}</button>
+                        <button class="btn" type="button" data-next>{% trans "Next" %}</button>
+                    </div> -->
+                </div>
+
+                <div class="form-step" data-step="5" hidden>
+                    <h3>{% trans "Participation in congregation services" %}</h3>
+                    <div class="form-grid">
+                        <label>
+                            <span>{{ form.participates_in_fellowship.label }}</span>
+                            {{ form.participates_in_fellowship }}
+                            {% if form.participates_in_fellowship.errors %}
+                                <small class="muted">{{ form.participates_in_fellowship.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.fellowship_house_name.label }}</span>
+                            {{ form.fellowship_house_name }}
+                            {% if form.fellowship_house_name.errors %}
+                                <small class="muted">{{ form.fellowship_house_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.fellowship_non_participation_reason.label }}</span>
+                            {{ form.fellowship_non_participation_reason }}
+                            {% if form.fellowship_non_participation_reason.errors %}
+                                <small class="muted">{{ form.fellowship_non_participation_reason.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.fellowship_chairperson_name.label }}</span>
+                            {{ form.fellowship_chairperson_name }}
+                            {% if form.fellowship_chairperson_name.errors %}
+                                <small class="muted">{{ form.fellowship_chairperson_name.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                        <label>
+                            <span>{{ form.fellowship_chairperson_signature.label }}</span>
+                            {{ form.fellowship_chairperson_signature }}
+                            {% if form.fellowship_chairperson_signature.errors %}
+                                <small class="muted">{{ form.fellowship_chairperson_signature.errors|striptags }}</small>
+                            {% endif %}
+                        </label>
+                    </div>
+                    <div class="step-actions">&nbsp;</div>
+                    <!-- <div class="step-actions">
+                        <button class="btn ghost" type="button" data-prev>{% trans "Previous" %}</button>
+                        <button class="btn" type="button" data-next>{% trans "Next" %}</button>
+                    </div> -->
+                </div>
+
+                <div class="form-step" data-step="6" hidden>
+                    <h3>{% trans "Fellowship and service interest" %}</h3>
+                    <div class="checkbox-grid">
+                        <label>
+                            {{ form.join_fellowship }}
+                            <span>{{ form.join_fellowship.label }}</span>
+                        </label>
+                        <label>
+                            {{ form.join_sunday_school }}
+                            <span>{{ form.join_sunday_school.label }}</span>
+                        </label>
+                        <label>
+                            {{ form.join_visiting_sick }}
+                            <span>{{ form.join_visiting_sick.label }}</span>
+                        </label>
+                        <label>
+                            {{ form.join_bible_study }}
+                            <span>{{ form.join_bible_study.label }}</span>
+                        </label>
+                        <label>
+                            {{ form.join_choir }}
+                            <span>{{ form.join_choir.label }}</span>
+                        </label>
+                        <label>
+                            {{ form.join_union }}
+                            <span>{{ form.join_union.label }}</span>
+                        </label>
+                    </div>
+                    <div class="step-actions">
+                        <!-- <button class="btn ghost" type="button" data-prev>{% trans "Previous" %}</button> -->
+                        <button class="btn" type="submit">{% trans "Save" %}</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        {% if can_change_login_password %}
+            <div
+                data-password-modal
+                hidden
+                style="position: fixed; inset: 0; display: none; background: rgba(0,0,0,.45); align-items: center; justify-content: center; padding: 1rem; z-index: 1000;"
+            >
+                <div class="card" style="width: 100%; max-width: 460px;">
+                    <h3 style="margin-bottom: .25rem;">{% trans "Change login password" %}</h3>
+                    <p class="muted" style="margin-bottom: 1rem;">{% trans "Set a new 6-digit password for this user account." %}</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="reset-member-password">
+                        <label>
+                            <span>{% trans "New password (6 digits)" %}</span>
+                            <input type="password" name="password1" class="form-control" minlength="6" inputmode="numeric" autocomplete="new-password" required>
+                        </label>
+                        <label>
+                            <span>{% trans "Confirm new password" %}</span>
+                            <input type="password" name="password2" class="form-control" minlength="6" inputmode="numeric" autocomplete="new-password" required>
+                        </label>
+                        <div class="step-actions">
+                            <button class="btn ghost" type="button" data-close-password-modal>{% trans "Cancel" %}</button>
+                            <button class="btn" type="submit">{% trans "Update password" %}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+                (function () {
+                    const modal = document.querySelector("[data-password-modal]");
+                    const openBtn = document.querySelector("[data-open-password-modal]");
+                    if (!modal || !openBtn) return;
+                    const closeBtn = modal.querySelector("[data-close-password-modal]");
+                    const openModal = () => {
+                        modal.hidden = false;
+                        modal.style.display = "flex";
+                    };
+                    const closeModal = () => {
+                        modal.style.display = "none";
+                        modal.hidden = true;
+                    };
+                    openBtn.addEventListener("click", openModal);
+                    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+                    modal.addEventListener("click", function (event) {
+                        if (event.target === modal) closeModal();
+                    });
+                })();
+            </script>
+        {% endif %}
+    {% else %}
+        <p class="muted">{% trans "You do not have permission to edit members." %}</p>
+    {% endif %}
+</section>
+{% endblock %}
