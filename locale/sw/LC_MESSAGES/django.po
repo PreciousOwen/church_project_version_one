@@ -123,7 +123,19 @@ msgid "Marriage date"
 msgstr "Tarehe ya ndoa"
 
 msgid "Spouse name"
-msgstr "Jina la mwenza"
+msgstr "Jina la mwenzi"
+
+msgid "Full name"
+msgstr "Jina kamili"
+
+msgid "Relationship"
+msgstr "Uhusiano"
+
+msgid "Remove"
+msgstr "Ondoa"
+
+msgid "Not married"
+msgstr "Sijaoa/kuolewa"
 
 msgid "Gender"
 msgstr "Jinsia"
@@ -135,7 +147,7 @@ msgid "Marriage type"
 msgstr "Aina ya ndoa"
 
 msgid "Marriage place"
-msgstr "Mahali mlipofunga ndoa"
+msgstr "Mahali pa kufunga ndoa (jina, mkoa)"
 
 #: .\members\forms.py:515
 msgid "Enter the registration date."
@@ -525,9 +537,13 @@ msgstr "Futa kikundi"
 
 #: .\templates\fellowships\form.html:4 .\templates\fellowships\form.html:5
 #, fuzzy
-#| msgid "Fellowship name"
-msgid "Fellowship form"
+# ~msgid "Fellowship form"
+
+msgid "Fellowship name"
 msgstr "Jina la jumuiya"
+
+msgid "House number"
+msgstr "Namba ya nyumba"
 
 #: .\templates\fellowships\form.html:27
 #, fuzzy
@@ -983,8 +999,8 @@ msgstr "Jina la makazi:"
 
 #: .\templates\members\application_approve.html:32
 #: .\templates\members\detail.html:49
-msgid "Block number:"
-msgstr "Namba ya block:"
+msgid "Block number"
+msgstr "bloki ya nyumba"
 
 #: .\templates\members\application_approve.html:33
 #: .\templates\members\detail.html:47
@@ -1014,8 +1030,8 @@ msgid "Spouse name:"
 msgstr "Jina la mwenzi:"
 
 #: .\templates\members\application_approve.html:41
-msgid "Living with spouse name:"
-msgstr "Anaishi na mwenzi (jina):"
+msgid "Living with spouse name"
+msgstr "Kama unaishi na mtu bila ndoa ya kikristo, jina la unayeishi naye"
 
 #: .\templates\members\application_approve.html:44
 msgid "Dependents"
@@ -1026,12 +1042,12 @@ msgid "Fellowship & parish"
 msgstr "Ushirika na parokia"
 
 #: .\templates\members\application_approve.html:61
-msgid "Fellowship name:"
-msgstr "Jina la ushirika:"
+msgid "Fellowship name"
+msgstr "Jina la ushirika"
 
 #: .\templates\members\application_approve.html:62
-msgid "Previous parish:"
-msgstr "Parokia ya awali:"
+msgid "Previous parish"
+msgstr "Parokia ya awali"
 
 #: .\templates\members\application_approve.html:65
 msgid "Neighbors & elders"
@@ -1174,6 +1190,15 @@ msgstr "Maelezo ya namba ya uanachama"
 #: .\templates\members\application_approve.html:106
 msgid "Has previous membership number:"
 msgstr "Ana namba ya uanachama ya awali:"
+
+msgid "Has membership number"
+msgstr "Ana namba ya uanachama"
+
+msgid "Membership registration date"
+msgstr "Tarehe ya kujiunga na uanachama"
+
+msgid "Membership registered full name"
+msgstr "Jina ulilosajiliwa (kama ulisajiliwa)"
 
 #: .\templates\members\application_approve.html:107
 msgid "Claimed membership number:"
@@ -1578,6 +1603,18 @@ msgstr "Sehemu ya lazima"
 #: .\templates\members\wizard_step.html:44
 msgid "Pledge details"
 msgstr "Maelezo ya ahadi"
+
+msgid "Pledge year"
+msgstr "Mwaka wa ahadi"
+
+msgid "Pledge building"
+msgstr "Ahadi ya jengo"
+
+msgid "Pledge stewardship"
+msgstr "Ahadi ya uwakili"
+
+msgid "Pledge other"
+msgstr "Ahadi nyingine (kama ipo)"
 
 #: .\templates\password_reset_request.html:8
 msgid "Reset password"
@@ -2315,65 +2352,71 @@ msgstr "Nenosiri limesasishwa kikamilifu. Tafadhali ingia."
 #~ msgid "Enter phone number"
 #~ msgstr "Ingiza namba ya simu"
 
-#~ msgid "Need help?"
-#~ msgstr "Unahitaji msaada?"
+msgid "Need help?"
+msgstr "Unahitaji msaada?"
 
-#~ msgid "Contact support"
-#~ msgstr "Wasiliana na msaada"
+msgid "Spouse phone"
+msgstr "Namba ya mwenzi"
 
-#~ msgid "Assign membership number"
-#~ msgstr "Tenga namba ya uanachama"
+msgid "Neighbor phone"
+msgstr "Namba ya jirani"
 
-#~ msgid "Baptism date"
-#~ msgstr "Tarehe ya ubatizo"
+msgid "Contact support"
+msgstr "Wasiliana na msaada"
 
-#~ msgid "Block number"
-#~ msgstr "Namba ya block"
+msgid "Assign membership number"
+msgstr "Tenga namba ya uanachama"
 
-#~ msgid "Confirmation date"
-#~ msgstr "Tarehe ya kipaimara"
+msgid "Baptism date"
+msgstr "Tarehe ya ubatizo"
 
-#~ msgid "Elder name"
-#~ msgstr "Jina la mzee wa kanisa"
+msgid "Block number"
+msgstr "Namba ya block"
 
-#~ msgid "Elder phone"
-#~ msgstr "Simu ya mzee wa kanisa"
+msgid "Confirmation date"
+msgstr "Tarehe ya kipaimara"
 
-#~ msgid "Fellowship chairperson name"
-#~ msgstr "Jina la mwenyekiti wa jumuiya"
+msgid "Elder name"
+msgstr "Jina la mzee wa kanisa"
 
-#~ msgid "Fellowship chairperson signature"
-#~ msgstr "Sahihi ya mwenyekiti wa jumuiya"
+msgid "Elder phone"
+msgstr "Simu ya mzee wa kanisa"
 
-#~ msgid "Fellowship house name"
-#~ msgstr "Jina la nyumba ya jumuiya"
+msgid "Fellowship chairperson name"
+msgstr "Jina la mwenyekiti wa jumuiya"
 
-#~ msgid "Fellowship non participation reason"
-#~ msgstr "Sababu ya kutoshiriki jumuiya"
+msgid "Fellowship chairperson signature"
+msgstr "Sahihi ya mwenyekiti wa jumuiya"
 
-#~ msgid "Is baptized"
-#~ msgstr "Amebatizwa"
+msgid "Fellowship house name"
+msgstr "Jina la nyumba ya jumuiya"
 
-#~ msgid "Is confirmed"
-#~ msgstr "Amepewa kipaimara"
+msgid "Fellowship non participation reason"
+msgstr "Sababu ya kutoshiriki jumuiya"
 
-#~ msgid "Join bible study"
-#~ msgstr "Jiunge na mafundisho ya Biblia"
+msgid "Is baptized"
+msgstr "Amebatizwa"
 
-#~ msgid "Join choir"
-#~ msgstr "Jiunge na kwaya"
+msgid "Is confirmed"
+msgstr "Amepewa kipaimara"
 
-#~ msgid "Join fellowship"
-#~ msgstr "Jiunge na jumuiya"
+msgid "Join bible study"
+msgstr "Jiunge na mafundisho ya Biblia"
 
-#~ msgid "Join sunday school"
-#~ msgstr "Jiunge na shule ya Jumapili"
+msgid "Join choir"
+msgstr "Jiunge na kwaya"
 
-#~ msgid "Join union"
-#~ msgstr "Jiunge na umoja"
+msgid "Join fellowship"
+msgstr "Jiunge na jumuiya"
 
-#~ msgid "Join visiting sick"
-#~ msgstr "Jiunge na huduma ya kuwatembelea wagonjwa"
+msgid "Join sunday school"
+msgstr "Jiunge na shule ya Jumapili"
+
+msgid "Join union"
+msgstr "Jiunge na umoja"
+
+msgid "Join visiting sick"
+msgstr "Jiunge na huduma ya kuwatembelea wagonjwa"
 
 #~ msgid "Living with spouse name"
 #~ msgstr "Jina la mwenzi unayeishi naye"
@@ -2381,35 +2424,35 @@ msgstr "Nenosiri limesasishwa kikamilifu. Tafadhali ingia."
 #~ msgid "Marriage place"
 #~ msgstr "Mahali pa ndoa"
 
-#~ msgid "Neighbor name"
-#~ msgstr "Jina la jirani"
+msgid "Neighbor name"
+msgstr "Jina la jirani"
 
-#~ msgid "Occupation"
-#~ msgstr "Kazi"
+msgid "Occupation"
+msgstr "Kazi"
 
-#~ msgid "Participates in fellowship"
-#~ msgstr "Anashiriki jumuiya"
+msgid "Participates in fellowship"
+msgstr "Anashiriki jumuiya"
 
-#~ msgid "Participates in sacraments"
-#~ msgstr "Anashiriki sakramenti"
+msgid "Participates in sacraments"
+msgstr "Anashiriki sakramenti"
 
 #~ msgid "Place of birth"
 #~ msgstr "Mahali alipozaliwa"
 
-#~ msgid "Po box"
-#~ msgstr "S.L.P"
+msgid "Po box"
+msgstr "S.L.P"
 
-#~ msgid "Previous parish"
-#~ msgstr "Usharika uliotoka"
+msgid "Previous parish"
+msgstr "Usharika uliotoka"
 
-#~ msgid "Primary phone"
-#~ msgstr "Simu ya msingi"
+msgid "Primary phone"
+msgstr "Simu ya msingi"
 
-#~ msgid "Profession"
-#~ msgstr "Taaluma"
+msgid "Profession"
+msgstr "Taaluma"
 
-#~ msgid "Residence name"
-#~ msgstr "Jina la makazi"
+msgid "Residence name"
+msgstr "Jina la makazi"
 
 #~ msgid "Spouse name"
 #~ msgstr "Jina la mwenzi"
@@ -2417,11 +2460,11 @@ msgstr "Nenosiri limesasishwa kikamilifu. Tafadhali ingia."
 #~ msgid "Spouse phone"
 #~ msgstr "Simu ya mwenzi"
 
-#~ msgid "Work place"
-#~ msgstr "Mahali pa kazi"
+msgid "Work place"
+msgstr "Mahali pa kazi"
 
-#~ msgid "Education level"
-#~ msgstr "Kiwango cha elimu"
+msgid "Education level"
+msgstr "Kiwango cha elimu"
 
 #~ msgid "Gender"
 #~ msgstr "Jinsia"
@@ -2435,5 +2478,5 @@ msgstr "Nenosiri limesasishwa kikamilifu. Tafadhali ingia."
 #~ msgid "Marriage type"
 #~ msgstr "Aina ya ndoa"
 
-#~ msgid "Volunteer status"
-#~ msgstr "Hali ya kujitolea"
+msgid "Volunteer status"
+msgstr "Hali ya kujitolea"

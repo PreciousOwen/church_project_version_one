@@ -1,41 +1,8 @@
-const menuToggle = document.getElementById("menuToggle");
-const sidebar = document.getElementById("sidebar");
-const sidebarClose = document.getElementById("sidebarClose");
-const sidebarBackdrop = document.getElementById("sidebarBackdrop");
-const sidebarLinks = sidebar ? sidebar.querySelectorAll("a") : [];
+// At the very top of your app.js file, add this:
+// Get the translation function (falls back to identity function if not available)
+const gettext = window.gettext || (msgid => msgid);
 
-const closeSidebar = () => {
-    if (sidebar) {
-        sidebar.classList.remove("open");
-    }
-};
-
-if (menuToggle && sidebar) {
-    menuToggle.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-    });
-}
-
-if (sidebarClose) {
-    sidebarClose.addEventListener("click", closeSidebar);
-}
-
-if (sidebarBackdrop) {
-    sidebarBackdrop.addEventListener("click", closeSidebar);
-}
-
-sidebarLinks.forEach((link) => {
-    link.addEventListener("click", closeSidebar);
-});
-
-const flashItems = document.querySelectorAll(".flash-item");
-flashItems.forEach((item) => {
-    setTimeout(() => {
-        item.style.opacity = "0";
-        item.style.transform = "translateY(-4px)";
-    }, 3500);
-});
-
+// Your existing code...
 const dependentsFields = document.querySelectorAll(".dependents-field");
 dependentsFields.forEach((field) => {
     const input = field.querySelector("input[type=hidden]");
@@ -70,11 +37,12 @@ dependentsFields.forEach((field) => {
     const addRow = (value) => {
         const row = document.createElement("tr");
         row.className = "dependents-row";
+        // Now using gettext for translations
         row.innerHTML = `
-            <td><input class="dependents-name" type="text" placeholder="Full name" /></td>
+            <td><input class="dependents-name" type="text" placeholder="${gettext('Full name')}" /></td>
             <td><input class="dependents-dob" type="date" /></td>
-            <td><input class="dependents-relation" type="text" placeholder="Relationship" /></td>
-            <td><button class="dependents-remove" type="button">Remove</button></td>
+            <td><input class="dependents-relation" type="text" placeholder="${gettext('Relationship')}" /></td>
+            <td><button class="dependents-remove" type="button">${gettext('Remove')}</button></td>
         `;
 
         const nameInput = row.querySelector(".dependents-name");

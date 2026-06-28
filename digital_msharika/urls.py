@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.views.i18n import JavaScriptCatalog
 
 from tenants.views import (
     AboutView,
@@ -43,6 +44,7 @@ from api.views import BriqSmsWebhookView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
+    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path("", LandingView.as_view(), name="landing"),
     path("about/", AboutView.as_view(), name="about"),
     path("events/", EventsView.as_view(), name="events"),
