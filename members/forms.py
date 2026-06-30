@@ -14,8 +14,8 @@ MARITAL_CHOICES = [
     ("Divorced", _("Divorced")),
 ]
 MARRIAGE_TYPE_CHOICES = [
+    ("----------", _("----------")),
     ("Church", _("Church")),
-    ("Not married", _("Not married")),
     ("Traditional", _("Traditional")),
     ("Civil", _("Civil")),
 ]

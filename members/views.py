@@ -49,13 +49,15 @@ WIZARD_STEPS = {
     5: ("Participation in congregation services", MemberStep5Form),
     6: ("Fellowship and service interest", MemberStep6Form),
 }
+from django.utils.translation import gettext_lazy as _
+
 APPLICATION_WIZARD_STEPS = {
-    1: ("Personal information", MemberApplicationStep1Form),
-    2: ("Contacts and residence", MemberApplicationStep2Form),
-    3: ("Education, profession, and occupation", MemberApplicationStep3Form),
-    4: ("Spiritual services", MemberApplicationStep4Form),
-    5: ("Participation in congregation services", MemberApplicationStep5Form),
-    6: ("Fellowship and service interest", MemberApplicationStep6Form),
+    1: (_("Personal information"), MemberApplicationStep1Form),
+    2: (_("Contacts and residence"), MemberApplicationStep2Form),
+    3: (_("Education, profession, and occupation"), MemberApplicationStep3Form),
+    4: (_("Spiritual services"), MemberApplicationStep4Form),
+    5: (_("Participation in congregation services"), MemberApplicationStep5Form),
+    6: (_("Fellowship and service interest"), MemberApplicationStep6Form),
 }
 FIELD_STEP_MAP = {
     "membership_no": 1,
