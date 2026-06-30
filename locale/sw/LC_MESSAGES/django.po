@@ -2173,10 +2173,8 @@ msgid "Create your account"
 msgstr "Fungua akaunti yako"
 
 #: .\templates\signup.html:255
-#, fuzzy
-#| msgid "Sign up to access the parish dashboard."
 msgid "Sign up with your phone number to access the parish dashboard."
-msgstr "Jisajili kupata dashibodi ya parokia."
+msgstr "Jisajili kutumia namba ya simu kupata dashibodi ya parokia."
 
 #: .\templates\signup.html:309
 msgid "Create account"
