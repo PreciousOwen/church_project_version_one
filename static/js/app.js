@@ -2,6 +2,37 @@
 // Get the translation function (falls back to identity function if not available)
 const gettext = window.gettext || (msgid => msgid);
 
+// Sidebar toggle (menu) elements
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+const sidebarClose = document.getElementById("sidebarClose");
+const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+const sidebarLinks = sidebar ? sidebar.querySelectorAll("a") : [];
+
+const closeSidebar = () => {
+    if (sidebar) {
+        sidebar.classList.remove("open");
+    }
+};
+
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+    });
+}
+
+if (sidebarClose) {
+    sidebarClose.addEventListener("click", closeSidebar);
+}
+
+if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener("click", closeSidebar);
+}
+
+sidebarLinks.forEach((link) => {
+    link.addEventListener("click", closeSidebar);
+});
+
 // Your existing code...
 const dependentsFields = document.querySelectorAll(".dependents-field");
 dependentsFields.forEach((field) => {
